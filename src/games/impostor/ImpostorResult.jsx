@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { sound } from '../../lib/sound.js'
 import Screen from '../../components/Screen.jsx'
 import Button from '../../components/Button.jsx'
 import Avatar from '../../components/Avatar.jsx'
@@ -16,6 +17,10 @@ export default function ImpostorResult({ round, result, players, onAgain, onSetu
   const category = CATEGORY_BY_ID[round.categoryId]
   const plural = impostors.length > 1
   const [showWord, setShowWord] = useState(false)
+  useEffect(() => {
+    const id = setTimeout(() => (caughtAll ? sound.win() : skipped ? sound.reveal() : sound.lose()), 250)
+    return () => clearTimeout(id)
+  }, [caughtAll, skipped])
 
   let tone = 'neutral'
   let title = plural ? 'Os impostores eram…' : 'O impostor era…'
@@ -79,7 +84,10 @@ export default function ImpostorResult({ round, result, players, onAgain, onSetu
         ) : (
           <>
             <small>{plural ? 'Impostores, chutem a palavra em voz alta!' : 'Impostor, chute a palavra em voz alta!'}</small>
-            <Button variant="secondary" icon="eye" onClick={() => setShowWord(true)}>
+            <Button variant="secondary" icon="eye" silent onClick={() => {
+              sound.reveal()
+              setShowWord(true)
+            }}>
               Mostrar a palavra
             </Button>
           </>

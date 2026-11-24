@@ -1,16 +1,23 @@
 import Icon from '../components/Icon.jsx'
+import SoundToggle from '../components/SoundToggle.jsx'
+import { sound } from '../lib/sound.js'
 import { GAMES, COMING_SOON } from '../games/index.js'
 import { ImpostorMascot } from '../games/impostor/ImpostorArt.jsx'
+import { ThermoMascot } from '../games/termometro/TermometroArt.jsx'
 import { vibrate } from '../lib/feedback.js'
 
 const ART = {
   impostor: <ImpostorMascot size={96} />,
+  termometro: <ThermoMascot size={96} />,
 }
 
 export default function Home({ onPick }) {
   return (
     <div className="screen home">
       <main className="screen-body">
+        <div className="home-top">
+          <SoundToggle />
+        </div>
         <div className="home-hero">
           <img src="./favicon.svg" alt="" width="72" height="72" className="home-logo" />
           <h1>
@@ -29,6 +36,7 @@ export default function Home({ onPick }) {
               style={{ '--game': g.gradient, animationDelay: `${i * 80}ms` }}
               onClick={() => {
                 vibrate(12)
+                sound.tap()
                 onPick(g.id)
               }}
             >

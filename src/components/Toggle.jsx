@@ -1,4 +1,5 @@
 import { vibrate } from '../lib/feedback.js'
+import { sound } from '../lib/sound.js'
 
 export default function Toggle({ checked, onChange, title, description }) {
   return (
@@ -9,6 +10,7 @@ export default function Toggle({ checked, onChange, title, description }) {
       className={`toggle-row ${checked ? 'on' : ''}`}
       onClick={() => {
         vibrate(8)
+        sound.soft()
         onChange(!checked)
       }}
     >

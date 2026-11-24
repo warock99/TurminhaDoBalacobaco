@@ -4,6 +4,7 @@ import Button, { IconButton } from '../components/Button.jsx'
 import Avatar from '../components/Avatar.jsx'
 import { newPlayer } from '../lib/players.js'
 import { vibrate } from '../lib/feedback.js'
+import { sound } from '../lib/sound.js'
 
 export default function Players({ players, setPlayers, min, max, onNext, onBack }) {
   const [name, setName] = useState('')
@@ -16,6 +17,7 @@ export default function Players({ players, setPlayers, min, max, onNext, onBack 
     if (players.some((p) => p.name.toLowerCase() === clean.toLowerCase())) {
       setError('Esse nome já está na lista.')
       vibrate([20, 40, 20])
+      sound.bad()
       return
     }
     if (players.length >= max) {
@@ -23,13 +25,17 @@ export default function Players({ players, setPlayers, min, max, onNext, onBack 
       return
     }
     vibrate(10)
+    sound.add()
     setPlayers([...players, newPlayer(clean.slice(0, 20))])
     setName('')
     setError('')
     inputRef.current?.focus()
   }
 
-  const remove = (id) => setPlayers(players.filter((p) => p.id !== id))
+  const remove = (id) => {
+    sound.remove()
+    setPlayers(players.filter((p) => p.id !== id))
+  }
   const missing = Math.max(0, min - players.length)
 
   return (
@@ -70,7 +76,7 @@ export default function Players({ players, setPlayers, min, max, onNext, onBack 
           enterKeyHint="done"
           aria-label="Nome do jogador"
         />
-        <IconButton icon="plus" label="Adicionar" className="add-btn" type="submit" onClick={undefined} />
+        <IconButton icon="plus" label="Adicionar" className="add-btn" type="submit" silent onClick={undefined} />
       </form>
       {error && <p className="form-error">{error}</p>}
 
@@ -89,7 +95,7 @@ export default function Players({ players, setPlayers, min, max, onNext, onBack 
             <li key={p.id} className="player-item">
               <Avatar name={p.name} index={i} />
               <span className="player-name">{p.name}</span>
-              <IconButton icon="trash" label={`Remover ${p.name}`} className="danger-ghost" onClick={() => remove(p.id)} />
+              <IconButton icon="trash" label={`Remover ${p.name}`} className="danger-ghost" silent onClick={() => remove(p.id)} />
             </li>
           ))}
         </ul>

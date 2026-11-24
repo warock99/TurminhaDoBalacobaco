@@ -137,6 +137,7 @@ export default function App() {
         round={round}
         result={result}
         players={players}
+        config={config}
         onAgain={() => {
           startRound()
           replace('play')

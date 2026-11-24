@@ -1,4 +1,5 @@
 import { vibrate } from '../lib/feedback.js'
+import { sound } from '../lib/sound.js'
 import Icon from './Icon.jsx'
 
 export default function Chip({ selected, onClick, children, color }) {
@@ -10,6 +11,7 @@ export default function Chip({ selected, onClick, children, color }) {
       aria-pressed={selected}
       onClick={() => {
         vibrate(8)
+        sound.soft()
         onClick()
       }}
     >

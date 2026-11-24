@@ -2,8 +2,12 @@ import Screen from '../components/Screen.jsx'
 import Button from '../components/Button.jsx'
 import Icon from '../components/Icon.jsx'
 import { ImpostorMascot } from '../games/impostor/ImpostorArt.jsx'
+import { ThermoMascot } from '../games/termometro/TermometroArt.jsx'
 
-const ART = { impostor: <ImpostorMascot size={170} /> }
+const ART = {
+  impostor: <ImpostorMascot size={170} />,
+  termometro: <ThermoMascot size={170} />,
+}
 
 export default function GameIntro({ game, onPlay, onBack }) {
   return (

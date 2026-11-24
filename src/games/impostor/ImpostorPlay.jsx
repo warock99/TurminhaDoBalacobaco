@@ -4,6 +4,7 @@ import Button from '../../components/Button.jsx'
 import Avatar from '../../components/Avatar.jsx'
 import Icon from '../../components/Icon.jsx'
 import { vibrate } from '../../lib/feedback.js'
+import { sound } from '../../lib/sound.js'
 import { CATEGORY_BY_ID } from './words.js'
 import { ImpostorMascot, CrewMascot } from './ImpostorArt.jsx'
 
@@ -60,11 +61,14 @@ function PassPhase({ player, turn, total, round, config, onNext, onExit }) {
   const reveal = () => {
     if (revealed || leaving) return
     vibrate(isImpostor ? [30, 60, 30] : 20)
+    if (isImpostor) sound.impostor()
+    else sound.reveal()
     setRevealed(true)
     setSeen(true)
   }
 
   const hideAndNext = () => {
+    sound.flip()
     setRevealed(false)
     setLeaving(true)
     // espera a carta virar antes de trocar de jogador
@@ -196,10 +200,14 @@ function Countdown({ minutes }) {
     endsAt.current = Date.now() + left * 1000
     const id = setInterval(() => {
       const remaining = Math.max(0, Math.round((endsAt.current - Date.now()) / 1000))
-      setLeft(remaining)
+      setLeft((prev) => {
+        if (remaining !== prev && remaining > 0 && remaining <= 10) sound.tick()
+        return remaining
+      })
       if (remaining === 0) {
         setRunning(false)
         vibrate([200, 100, 200, 100, 400])
+        sound.alarm()
       }
     }, 250)
     return () => clearInterval(id)
@@ -253,6 +261,7 @@ function VotePhase({ players, round, onReveal, onBack, onExit }) {
 
   const toggle = (id) => {
     vibrate(10)
+    sound.soft()
     setSelected((prev) => {
       if (prev.includes(id)) return prev.filter((x) => x !== id)
       if (need === 1) return [id]

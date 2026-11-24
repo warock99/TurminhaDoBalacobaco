@@ -1,5 +1,6 @@
 import Icon from './Icon.jsx'
 import { vibrate } from '../lib/feedback.js'
+import { sound } from '../lib/sound.js'
 
 /**
  * Botão padrão do app.
@@ -14,6 +15,7 @@ export default function Button({
   size = 'md',
   onClick,
   className = '',
+  silent = false,
   ...rest
 }) {
   return (
@@ -22,6 +24,7 @@ export default function Button({
       className={`btn btn-${variant} btn-${size} ${block ? 'btn-block' : ''} ${className}`}
       onClick={(e) => {
         vibrate(10)
+        if (!silent) sound.tap()
         onClick?.(e)
       }}
       {...rest}
@@ -33,7 +36,7 @@ export default function Button({
   )
 }
 
-export function IconButton({ icon, label, onClick, className = '', ...rest }) {
+export function IconButton({ icon, label, onClick, className = '', silent = false, ...rest }) {
   return (
     <button
       type="button"
@@ -42,6 +45,7 @@ export function IconButton({ icon, label, onClick, className = '', ...rest }) {
       title={label}
       onClick={(e) => {
         vibrate(8)
+        if (!silent) sound.soft()
         onClick?.(e)
       }}
       {...rest}

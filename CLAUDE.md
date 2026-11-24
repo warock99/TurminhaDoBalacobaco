@@ -58,9 +58,25 @@ Jogadores são compartilhados entre todos os jogos.
 - Se pegarem o impostor, ele ainda pode chutar a palavra em voz alta para roubar a vitória (regra da mesa, não do app).
   Por isso a tela de resultado esconde a palavra até alguém tocar em "Mostrar a palavra".
 
-## Jogo 2: estilo ITO (próximo)
-- Mecânica: cada um recebe número secreto (1–100), tema na tela, cada um dá uma dica, o grupo ordena, revelação confere.
-- Precisa de nome e temas próprios. Ainda não decidido.
+## Jogo 2: Termômetro (pronto, nome provisório)
+- Mecânica estilo ITO com nome e temas próprios. Valdir ainda vai escolher o nome final.
+- 2 a 20 jogadores. Cada um recebe um número diferente (faixa 1–10, 1–50 ou 1–100; nunca menor que o nº de jogadores).
+- 41 temas próprios em `themes.js`, cada um com escala (o que vale 1 e o que vale o máximo), em 5 grupos:
+  Dia a dia, Comida, Emoções, Absurdos, Brasil. Temas não se repetem entre rodadas.
+- Rodada: passar o celular → ver número (com o tema e a escala) → dicas em voz alta → ordenar a fila com setas
+  (pode trocar o tema) → revelar um por um → resultado.
+- Erro = número revelado menor que algum já revelado antes (cooperativo, sem placar).
+
+## Sons
+- Todos os sons são sintetizados na hora com Web Audio API (`src/lib/sound.js`): sem arquivos, funciona offline.
+- Botões, chips, cartas, revelação, impostor, tique do cronômetro, alarme, acerto/erro, vitória e derrota.
+- Botão de som/mudo na tela inicial; a escolha fica salva no aparelho.
+- Pedido do Valdir: ter áudio. Música de fundo ainda não foi feita.
+
+## Personagens (planejado)
+- Valdir vai descrever personagens animados para os jogadores escolherem ao entrar na partida.
+- Sem foto de câmera: a arte dos personagens será feita em SVG/CSS a partir da descrição dele.
+- Hoje cada jogador aparece como um círculo colorido com as iniciais (`components/Avatar.jsx`).
 
 ## Comandos
 - `npm install` — instala dependências
