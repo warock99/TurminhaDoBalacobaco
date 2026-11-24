@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Screen from '../../components/Screen.jsx'
 import Button from '../../components/Button.jsx'
 import Avatar from '../../components/Avatar.jsx'
@@ -14,6 +15,7 @@ export default function ImpostorResult({ round, result, players, onAgain, onSetu
   const caughtSome = !skipped && hits > 0 && !caughtAll
   const category = CATEGORY_BY_ID[round.categoryId]
   const plural = impostors.length > 1
+  const [showWord, setShowWord] = useState(false)
 
   let tone = 'neutral'
   let title = plural ? 'Os impostores eram…' : 'O impostor era…'
@@ -68,9 +70,20 @@ export default function ImpostorResult({ round, result, players, onAgain, onSetu
       </div>
 
       <div className="secret-reveal">
-        <small>A palavra secreta era</small>
-        <strong>{round.word}</strong>
-        <span className="tag" style={{ '--chip': category?.color }}>{category?.name}</span>
+        {showWord ? (
+          <>
+            <small>A palavra secreta era</small>
+            <strong className="pop-in">{round.word}</strong>
+            <span className="tag" style={{ '--chip': category?.color }}>{category?.name}</span>
+          </>
+        ) : (
+          <>
+            <small>{plural ? 'Impostores, chutem a palavra em voz alta!' : 'Impostor, chute a palavra em voz alta!'}</small>
+            <Button variant="secondary" icon="eye" onClick={() => setShowWord(true)}>
+              Mostrar a palavra
+            </Button>
+          </>
+        )}
       </div>
     </Screen>
   )

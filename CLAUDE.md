@@ -56,6 +56,7 @@ Jogadores são compartilhados entre todos os jogos.
 - Opções: categorias, quantidade de impostores, tempo de conversa (sem/1/2/3/5 min), dica de categoria para o impostor.
 - Rodada: passar o celular → tocar na carta para ver → esconder e passar → conversa (quem começa é sorteado) → votação → resultado.
 - Se pegarem o impostor, ele ainda pode chutar a palavra em voz alta para roubar a vitória (regra da mesa, não do app).
+  Por isso a tela de resultado esconde a palavra até alguém tocar em "Mostrar a palavra".
 
 ## Jogo 2: estilo ITO (próximo)
 - Mecânica: cada um recebe número secreto (1–100), tema na tela, cada um dá uma dica, o grupo ordena, revelação confere.
