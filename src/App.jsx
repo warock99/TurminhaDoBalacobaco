@@ -7,6 +7,14 @@ import Players from './screens/Players.jsx'
 import { GAME_BY_ID } from './games/index.js'
 import { useStoredState } from './lib/storage.js'
 
+function pushGuard() {
+  try {
+    history.pushState({ balacobaco: true }, '')
+  } catch {
+    /* navegador sem histórico (ex.: dentro de outro site) */
+  }
+}
+
 // Fluxo: início → jogo → jogadores → configuração → partida → resultado
 export default function App() {
   const [stack, setStack] = useState(['home'])
@@ -40,7 +48,7 @@ export default function App() {
   const atHome = stack.length === 1
   useEffect(() => {
     if (!atHome && !history.state?.balacobaco) {
-      history.pushState({ balacobaco: true }, '')
+      pushGuard()
     }
   }, [atHome])
   useEffect(() => {
@@ -48,7 +56,7 @@ export default function App() {
       const current = stackRef.current
       const stays = current[current.length - 1] === 'play' || current.length > 2
       backRef.current()
-      if (stays) history.pushState({ balacobaco: true }, '')
+      if (stays) pushGuard()
     }
     window.addEventListener('popstate', onPop)
     return () => window.removeEventListener('popstate', onPop)
