@@ -98,11 +98,6 @@ export const sound = {
       tone({ freq: f, start: 0.12 + i * 0.06, dur: 0.22, type: 'sine', vol: 0.18 }),
     )
   },
-  impostor: () => {
-    whoosh({ vol: 0.12 })
-    tone({ freq: 110, to: 70, start: 0.1, dur: 0.7, type: 'sawtooth', vol: 0.16 })
-    tone({ freq: 116, to: 74, start: 0.1, dur: 0.7, type: 'sawtooth', vol: 0.12 })
-  },
   tick: () => tone({ freq: 1200, dur: 0.04, type: 'square', vol: 0.08 }),
   alarm: () => {
     for (let i = 0; i < 3; i++) {

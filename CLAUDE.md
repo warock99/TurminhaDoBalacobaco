@@ -70,7 +70,8 @@ Jogadores são compartilhados entre todos os jogos.
 
 ## Sons
 - Todos os sons são sintetizados na hora com Web Audio API (`src/lib/sound.js`): sem arquivos, funciona offline.
-- Botões, chips, cartas, revelação, impostor, tique do cronômetro, alarme, acerto/erro, vitória e derrota.
+- Botões, chips, cartas, revelação, tique do cronômetro, alarme, acerto/erro, vitória e derrota.
+- Ao ver a carta, som e vibração são **iguais para todos** (pedido do Valdir): nada pode denunciar o impostor.
 - Botão de som/mudo na tela inicial; a escolha fica salva no aparelho.
 - Pedido do Valdir: ter áudio. Música de fundo ainda não foi feita.
 

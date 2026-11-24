@@ -61,9 +61,9 @@ function PassPhase({ player, turn, total, round, config, onNext, onExit }) {
 
   const reveal = () => {
     if (revealed || leaving) return
-    vibrate(isImpostor ? [30, 60, 30] : 20)
-    if (isImpostor) sound.impostor()
-    else sound.reveal()
+    // Som e vibração iguais para todos: ninguém por perto pode descobrir quem é o impostor.
+    vibrate(20)
+    sound.reveal()
     setRevealed(true)
     setSeen(true)
   }
