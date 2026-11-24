@@ -1,0 +1,32 @@
+# Dependências
+node_modules/
+
+# Builds
+dist/
+dev-dist/
+build/
+
+# Capacitor (gerado quando for criar o APK)
+android/app/build/
+android/.gradle/
+android/local.properties
+ios/App/Pods/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Ambiente
+.env
+.env.*
+!.env.example
+
+# Editores e sistema
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
