@@ -81,7 +81,7 @@ export default function TermometroResult({ round, result, players, config, onAga
           return (
             <li key={c.id} className={`order-item ${open ? (c.ok ? 'ok' : 'bad') : 'closed'}`}>
               <span className="order-pos">{i + 1}</span>
-              <Avatar name={p.name} index={p.index} size={40} />
+              <Avatar name={p.name} character={p.character} index={p.index} size={40} />
               <span className="player-name">{p.name}</span>
               {open ? (
                 <span className="num-chip pop-in" style={{ '--heat': heatColor(c.number, maxNumber) }}>

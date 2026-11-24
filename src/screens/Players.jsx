@@ -2,13 +2,18 @@ import { useRef, useState } from 'react'
 import Screen from '../components/Screen.jsx'
 import Button, { IconButton } from '../components/Button.jsx'
 import Avatar from '../components/Avatar.jsx'
+import CharacterPicker from '../components/CharacterPicker.jsx'
+import { CHARACTER_BY_ID } from '../components/Characters.jsx'
 import { newPlayer } from '../lib/players.js'
+import Icon from '../components/Icon.jsx'
 import { vibrate } from '../lib/feedback.js'
 import { sound } from '../lib/sound.js'
 
 export default function Players({ players, setPlayers, min, max, onNext, onBack }) {
   const [name, setName] = useState('')
   const [error, setError] = useState('')
+  const [character, setCharacter] = useState(null)
+  const [editing, setEditing] = useState(null) // id do jogador trocando de personagem
   const inputRef = useRef(null)
 
   const add = () => {
@@ -26,8 +31,9 @@ export default function Players({ players, setPlayers, min, max, onNext, onBack 
     }
     vibrate(10)
     sound.add()
-    setPlayers([...players, newPlayer(clean.slice(0, 20))])
+    setPlayers([...players, { ...newPlayer(clean.slice(0, 20)), character }])
     setName('')
+    setCharacter(null)
     setError('')
     inputRef.current?.focus()
   }
@@ -37,6 +43,9 @@ export default function Players({ players, setPlayers, min, max, onNext, onBack 
     setPlayers(players.filter((p) => p.id !== id))
   }
   const missing = Math.max(0, min - players.length)
+  const takenBy = Object.fromEntries(players.filter((p) => p.character).map((p) => [p.character, p.name]))
+  const editingPlayer = players.find((p) => p.id === editing)
+  const setPlayerCharacter = (id, ch) => setPlayers(players.map((p) => (p.id === id ? { ...p, character: ch } : p)))
 
   return (
     <Screen
@@ -56,6 +65,13 @@ export default function Players({ players, setPlayers, min, max, onNext, onBack 
         </Button>
       }
     >
+      <section className="char-section">
+        <h3>
+          Personagem {character && <span className="char-chosen">{CHARACTER_BY_ID[character]?.name}</span>}
+        </h3>
+        <CharacterPicker value={character} onChange={setCharacter} takenBy={takenBy} />
+      </section>
+
       <form
         className="add-player"
         onSubmit={(e) => {
@@ -93,12 +109,31 @@ export default function Players({ players, setPlayers, min, max, onNext, onBack 
         <ul className="player-list">
           {players.map((p, i) => (
             <li key={p.id} className="player-item">
-              <Avatar name={p.name} index={i} />
+              <button type="button" className="avatar-btn" aria-label={`Trocar personagem de ${p.name}`} onClick={() => setEditing(p.id)}>
+                <Avatar name={p.name} character={p.character} index={i} size={48} />
+                <span className="avatar-edit"><Icon name="refresh" size={12} strokeWidth={3} /></span>
+              </button>
               <span className="player-name">{p.name}</span>
               <IconButton icon="trash" label={`Remover ${p.name}`} className="danger-ghost" silent onClick={() => remove(p.id)} />
             </li>
           ))}
         </ul>
+      )}
+      {editingPlayer && (
+        <div className="modal-backdrop" onClick={() => setEditing(null)}>
+          <div className="modal char-modal" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
+            <h2>Personagem de {editingPlayer.name}</h2>
+            <CharacterPicker
+              layout="grid"
+              value={editingPlayer.character}
+              takenBy={Object.fromEntries(Object.entries(takenBy).filter(([, n]) => n !== editingPlayer.name))}
+              onChange={(ch) => {
+                setPlayerCharacter(editingPlayer.id, ch)
+                setEditing(null)
+              }}
+            />
+          </div>
+        </div>
       )}
     </Screen>
   )

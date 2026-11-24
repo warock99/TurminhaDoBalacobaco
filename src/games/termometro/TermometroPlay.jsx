@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Screen from '../../components/Screen.jsx'
 import Button, { IconButton } from '../../components/Button.jsx'
 import Avatar from '../../components/Avatar.jsx'
+import { CharacterArt } from '../../components/Characters.jsx'
 import Icon from '../../components/Icon.jsx'
 import { vibrate } from '../../lib/feedback.js'
 import { sound } from '../../lib/sound.js'
@@ -86,7 +87,11 @@ function PassPhase({ player, number, turn, total, theme, maxNumber, onNext, onEx
         </div>
 
         <div className="pass-who">
-          <Avatar name={player.name} index={player.index} size={56} />
+          {player.character ? (
+            <CharacterArt id={player.character} size={58} className="pass-character" />
+          ) : (
+            <Avatar name={player.name} index={player.index} size={56} />
+          )}
           <div>
             <small>Passe o celular para</small>
             <strong>{player.name}</strong>
@@ -184,7 +189,7 @@ function OrderPhase({ people, theme, maxNumber, onChangeTheme, onReveal, onExit 
           return (
             <li key={id} className={`order-item ${moved === id ? 'moved' : ''}`}>
               <span className="order-pos">{i + 1}</span>
-              <Avatar name={p.name} index={p.index} size={40} />
+              <Avatar name={p.name} character={p.character} index={p.index} size={40} />
               <span className="player-name">{p.name}</span>
               <IconButton silent icon="up" label={`Subir ${p.name}`} disabled={i === 0} onClick={() => move(i, -1)} />
               <IconButton silent icon="down" label={`Descer ${p.name}`} disabled={i === order.length - 1} onClick={() => move(i, 1)} />

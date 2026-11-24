@@ -1764,3 +1764,296 @@ button.game-card:active {
   justify-content: flex-end;
   margin: -14px 0 -40px;
 }
+
+/* ===================================================================
+   Personagens
+   =================================================================== */
+
+.character {
+  overflow: visible;
+  flex: none;
+}
+
+.character.animated .ch-body {
+  transform-box: view-box;
+  transform-origin: 60px 160px;
+  animation: ch-idle 2.4s ease-in-out infinite;
+}
+
+.character .ch-eyes {
+  transform-box: view-box;
+  animation: blink 4.5s infinite;
+}
+
+.ch-diva .ch-eyes { animation-delay: -1.3s; }
+.ch-sargento .ch-eyes { animation-delay: -2.1s; }
+.ch-quadrado .ch-eyes { animation-delay: -0.6s; }
+.ch-cavanhaque .ch-eyes { animation-delay: -3s; }
+
+@keyframes ch-idle {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  50% { transform: translateY(-2px) scaleY(1.015); }
+}
+
+@keyframes blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+/* Testuda: brilho passeando pela testa */
+.character.animated .ch-shine {
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0%, 100% { opacity: 0.35; transform: translateX(0); }
+  50% { opacity: 0.8; transform: translateX(16px); }
+}
+
+/* Diva: cabelo e brincos balançando */
+.character.animated .ch-afro {
+  transform-box: view-box;
+  transform-origin: 60px 60px;
+  animation: sway 3s ease-in-out infinite;
+}
+
+.character.animated .ch-earring {
+  animation: earring 1.5s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes earring {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(1.5px); }
+}
+
+/* Sargento: bumbum que balança e braço flexionando */
+.character.animated .ch-butt {
+  transform-box: view-box;
+  transform-origin: 70px 120px;
+  animation: jiggle 1.2s ease-in-out infinite;
+}
+
+.character.animated .ch-boing {
+  animation: boing 1.2s ease-in-out infinite;
+}
+
+@keyframes jiggle {
+  0%, 60%, 100% { transform: scale(1); }
+  70% { transform: scale(1.08, 0.95); }
+  80% { transform: scale(0.97, 1.04); }
+  90% { transform: scale(1.03, 0.98); }
+}
+
+@keyframes boing {
+  0%, 60%, 100% { opacity: 0; }
+  70%, 90% { opacity: 1; }
+}
+
+.character.animated .ch-flex-l,
+.character.animated .ch-flex-r {
+  transform-box: view-box;
+  animation: flex 2.4s ease-in-out infinite;
+}
+
+.ch-flex-l { transform-origin: 30px 84px; }
+.ch-flex-r { transform-origin: 90px 80px; animation-delay: -1.2s !important; }
+
+@keyframes flex {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+}
+
+/* Quadradão: cabeça quadrada balançando */
+.character.animated .ch-square {
+  transform-box: view-box;
+  transform-origin: 60px 90px;
+  animation: square-wobble 2.6s ease-in-out infinite;
+}
+
+@keyframes square-wobble {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+/* Cavanhaque: rabo de cavalo balançando */
+.character.animated .ch-ponytail {
+  transform-box: view-box;
+  transform-origin: 84px 30px;
+  animation: ponytail 1.8s ease-in-out infinite;
+}
+
+@keyframes ponytail {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(8deg); }
+}
+
+/* Testuda e Diva mexem os braços de leve */
+.character.animated .ch-arm-l,
+.character.animated .ch-arm-r {
+  transform-box: view-box;
+  animation: wave 2.4s ease-in-out infinite;
+}
+
+.ch-arm-l { transform-origin: 32px 100px; }
+.ch-arm-r { transform-origin: 88px 100px; animation-direction: reverse !important; }
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(6deg); }
+}
+
+/* Avatar com personagem */
+.avatar.has-character {
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 30%, #fff8 0%, transparent 60%), var(--avatar);
+}
+
+.avatar.has-character .character {
+  display: block;
+}
+
+.avatar-btn {
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: none;
+  border-radius: 50%;
+}
+
+.avatar-edit {
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid var(--bg);
+}
+
+/* Escolha de personagem */
+.char-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.char-section h3 {
+  font-size: 1.05rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.char-chosen {
+  color: var(--accent);
+}
+
+.char-picker.row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin: 0 -16px;
+  padding: 4px 16px 8px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+
+.char-picker.row::-webkit-scrollbar {
+  display: none;
+}
+
+.char-picker.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.char-option {
+  --char: var(--primary);
+  position: relative;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+  width: 84px;
+  min-height: 122px;
+  padding: 8px 4px 8px;
+  border-radius: 18px;
+  border: 2px solid var(--border);
+  background: linear-gradient(to top, color-mix(in srgb, var(--char) 22%, transparent), rgba(255, 255, 255, 0.03));
+  scroll-snap-align: start;
+  transition: transform 0.2s var(--ease-bounce), border-color 0.2s, background 0.2s;
+}
+
+.char-picker.grid .char-option {
+  width: auto;
+}
+
+.char-option:active {
+  transform: scale(0.94);
+}
+
+.char-option.selected {
+  border-color: var(--char);
+  background: linear-gradient(to top, color-mix(in srgb, var(--char) 45%, transparent), rgba(255, 255, 255, 0.06));
+  transform: translateY(-3px);
+}
+
+.char-option.taken:not(.selected) {
+  opacity: 0.55;
+}
+
+.char-option.none {
+  justify-content: center;
+}
+
+.char-none-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px dashed var(--border);
+  color: var(--muted);
+}
+
+.char-name {
+  font-weight: 800;
+  font-size: 0.82rem;
+}
+
+.char-owner {
+  max-width: 100%;
+  padding: 1px 4px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  font-size: 0.68rem;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.char-modal {
+  max-width: 420px;
+}
+
+.char-modal h2 {
+  font-size: 1.4rem;
+}
+
+.pass-character {
+  margin: -10px 0 -6px;
+}

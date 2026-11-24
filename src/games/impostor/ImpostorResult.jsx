@@ -66,7 +66,7 @@ export default function ImpostorResult({ round, result, players, onAgain, onSetu
         <div className="impostor-names">
           {impostors.map((p) => (
             <span key={p.id} className="impostor-name pop-in">
-              <Avatar name={p.name} index={p.index} size={36} />
+              <Avatar name={p.name} character={p.character} index={p.index} size={36} />
               {p.name}
             </span>
           ))}

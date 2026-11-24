@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import Screen from '../../components/Screen.jsx'
 import Button from '../../components/Button.jsx'
 import Avatar from '../../components/Avatar.jsx'
+import { CharacterArt } from '../../components/Characters.jsx'
 import Icon from '../../components/Icon.jsx'
 import { vibrate } from '../../lib/feedback.js'
 import { sound } from '../../lib/sound.js'
@@ -95,7 +96,11 @@ function PassPhase({ player, turn, total, round, config, onNext, onExit }) {
         </div>
 
         <div className="pass-who">
-          <Avatar name={player.name} index={player.index} size={56} />
+          {player.character ? (
+            <CharacterArt id={player.character} size={58} className="pass-character" />
+          ) : (
+            <Avatar name={player.name} index={player.index} size={56} />
+          )}
           <div>
             <small>Passe o celular para</small>
             <strong>{player.name}</strong>
@@ -165,7 +170,7 @@ function DiscussPhase({ starter, round, config, onVote, onExit }) {
         <div className="starter-card pop-in">
           <small>Quem começa</small>
           <div className="starter-name">
-            <Avatar name={starter.name} index={starter.index} size={52} />
+            <Avatar name={starter.name} character={starter.character} index={starter.index} size={52} />
             <strong>{starter.name}</strong>
           </div>
         </div>
@@ -293,7 +298,7 @@ function VotePhase({ players, round, onReveal, onBack, onExit }) {
           const on = selected.includes(p.id)
           return (
             <button key={p.id} type="button" className={`vote-card ${on ? 'on' : ''}`} onClick={() => toggle(p.id)} aria-pressed={on}>
-              <Avatar name={p.name} index={p.index} size={52} />
+              <Avatar name={p.name} character={p.character} index={p.index} size={52} />
               <span>{p.name}</span>
               {on && (
                 <span className="vote-mark">

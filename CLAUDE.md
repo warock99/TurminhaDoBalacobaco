@@ -32,11 +32,12 @@ Uso principal em celular Android; desenvolvido e testado também no computador.
 ```
 src/
   App.jsx              navegação entre telas + botão voltar do Android
-  components/          peças reutilizáveis (Button, Screen, Avatar, Chip, Toggle, Stepper, Modal, Icon, Background)
+  components/          peças reutilizáveis (Button, Screen, Avatar, Characters, CharacterPicker, Chip, Toggle, Stepper, Modal, Icon, Background, SoundToggle)
   screens/             telas comuns a todos os jogos (Home, GameIntro, Players)
   games/index.js       registro de jogos (lista GAMES e COMING_SOON)
   games/impostor/      jogo Impostor (logic.js, words.js, Setup, Play, Result, Art)
-  lib/                 utilidades (storage, random, players, feedback)
+  games/termometro/    jogo Termômetro (logic.js, themes.js, Setup, Play, Result, Art)
+  lib/                 utilidades (storage, random, players, feedback, sound)
   styles/              global.css (tema em variáveis CSS no :root) e fonts.css
 public/                ícones do app (SVG + PNG gerados a partir do SVG)
 ```
@@ -73,10 +74,20 @@ Jogadores são compartilhados entre todos os jogos.
 - Botão de som/mudo na tela inicial; a escolha fica salva no aparelho.
 - Pedido do Valdir: ter áudio. Música de fundo ainda não foi feita.
 
-## Personagens (planejado)
-- Valdir vai descrever personagens animados para os jogadores escolherem ao entrar na partida.
-- Sem foto de câmera: a arte dos personagens será feita em SVG/CSS a partir da descrição dele.
-- Hoje cada jogador aparece como um círculo colorido com as iniciais (`components/Avatar.jsx`).
+## Personagens (pronto)
+- 5 personagens animados descritos pelo Valdir (caricaturas carinhosas da turma), em `components/Characters.jsx`:
+  - **Testuda**: menina com a testa enorme (com brilho passeando), cabelo puxado para trás.
+  - **Diva**: menina de pele bem escura (tom rico e bonito), black power, argolas douradas, vestido amarelo.
+  - **Sargento**: cabelo raspado militar, muito forte, flexionando o braço, bumbum avantajado que balança.
+  - **Quadradão**: baixinho, forte, cabeça bem quadrada que balança.
+  - **Cavanhaque**: pele morena, cavanhaque e bigode, cabelo grande preso em rabo de cavalo que balança.
+- Valdir falou em 6; descreveu 5. Falta o sexto (aguardando descrição). Nomes são provisórios.
+- Sem foto de câmera: tudo em SVG + animação CSS (piscar, respirar e um movimento próprio de cada um).
+- Escolha opcional no cadastro de jogadores (faixa rolável); tocar no avatar na lista troca o personagem.
+  Pode repetir personagem; mostra quem já está usando. Quem não escolhe fica com círculo colorido + iniciais.
+- Avatar usa só a cabeça (`headBox`); a tela de passar o celular mostra o corpo inteiro.
+- Para criar um personagem novo: copiar um bloco em `CHARACTERS`, ajustar cores, desenho e `headBox`,
+  e (se quiser animação própria) adicionar a classe e a animação no fim de `styles/global.css`.
 
 ## Comandos
 - `npm install` — instala dependências
