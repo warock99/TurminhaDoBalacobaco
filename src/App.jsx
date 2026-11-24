@@ -24,6 +24,8 @@ export default function App() {
   const [memory, setMemory] = useStoredState('memory', {})
   const [round, setRound] = useState(null)
   const [result, setResult] = useState(null)
+  // Dados da partida em andamento (ex.: placar do Na Mosca). Zera ao começar uma partida nova.
+  const [session, setSession] = useState({})
   const [confirmExit, setConfirmExit] = useState(false)
 
   const screen = stack[stack.length - 1]
@@ -71,7 +73,7 @@ export default function App() {
   const startRound = (cfg = config) => {
     const used = memory[game.id] ?? []
     const r = game.createRound(players, cfg, used)
-    const nextUsed = r.resetMemory ? [r.word] : [...used, r.word].slice(-200)
+    const nextUsed = r.resetMemory ? [r.word] : [...used, r.word].slice(-3000)
     setMemory({ ...memory, [game.id]: nextUsed })
     setRound(r)
     setResult(null)
@@ -110,6 +112,7 @@ export default function App() {
         onBack={back}
         onStart={(cfg) => {
           setConfigs({ ...configs, [game.id]: cfg })
+          setSession({})
           startRound(cfg)
           go('play')
         }}
@@ -123,6 +126,8 @@ export default function App() {
         round={round}
         players={players}
         config={config}
+        session={session}
+        setSession={setSession}
         onExit={back}
         onFinish={(res) => {
           setResult(res)
@@ -138,6 +143,13 @@ export default function App() {
         result={result}
         players={players}
         config={config}
+        session={session}
+        setSession={setSession}
+        onNewMatch={() => {
+          setSession({})
+          startRound()
+          replace('play')
+        }}
         onAgain={() => {
           startRound()
           replace('play')

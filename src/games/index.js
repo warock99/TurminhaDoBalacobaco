@@ -3,8 +3,9 @@
 // 2. Importe e coloque na lista GAMES abaixo.
 import impostor from './impostor/index.js'
 import termometro from './termometro/index.js'
+import namosca from './namosca/index.js'
 
-export const GAMES = [impostor, termometro]
+export const GAMES = [impostor, termometro, namosca]
 
 // Jogos que aparecem como "Em breve" na tela inicial.
 export const COMING_SOON = []

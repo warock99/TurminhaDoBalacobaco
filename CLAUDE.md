@@ -37,6 +37,7 @@ src/
   games/index.js       registro de jogos (lista GAMES e COMING_SOON)
   games/impostor/      jogo Impostor (logic.js, words.js, Setup, Play, Result, Art)
   games/termometro/    jogo Termômetro (logic.js, themes.js, Setup, Play, Result, Art)
+  games/namosca/       jogo Na Mosca (logic.js, questions.js, Keypad, Setup, Play, Result, Art)
   lib/                 utilidades (storage, random, players, feedback, sound)
   styles/              global.css (tema em variáveis CSS no :root) e fonts.css
 public/                ícones do app (SVG + PNG gerados a partir do SVG)
@@ -53,7 +54,7 @@ Jogadores são compartilhados entre todos os jogos.
 
 ## Jogo 1: Impostor (pronto)
 - 3 a 20 jogadores. Impostores: 1 até `floor((n-1)/2)`.
-- 10 categorias com 30 palavras cada em `words.js`. Palavras não se repetem até acabar o conjunto (memória de até 200).
+- 20 categorias com 40 palavras cada (800 no total) em `words.js`. Palavras não se repetem até acabar o conjunto.
 - Opções: categorias, quantidade de impostores, tempo de conversa (sem/1/2/3/5 min), dica de categoria para o impostor.
 - Rodada: passar o celular → tocar na carta para ver → esconder e passar → conversa (quem começa é sorteado) → votação → resultado.
 - Se pegarem o impostor, ele ainda pode chutar a palavra em voz alta para roubar a vitória (regra da mesa, não do app).
@@ -62,11 +63,25 @@ Jogadores são compartilhados entre todos os jogos.
 ## Jogo 2: Termômetro (pronto, nome provisório)
 - Mecânica estilo ITO com nome e temas próprios. Valdir ainda vai escolher o nome final.
 - 2 a 20 jogadores. Cada um recebe um número diferente (faixa 1–10, 1–50 ou 1–100; nunca menor que o nº de jogadores).
-- 41 temas próprios em `themes.js`, cada um com escala (o que vale 1 e o que vale o máximo), em 5 grupos:
-  Dia a dia, Comida, Emoções, Absurdos, Brasil. Temas não se repetem entre rodadas.
+- 150 temas próprios em `themes.js`, cada um com escala (o que vale 1 e o que vale o máximo), em 8 grupos:
+  Dia a dia, Comida, Emoções, Absurdos, Brasil, Trabalho e escola, Amor e amizade, Diversão e lazer.
+  Temas não se repetem entre rodadas.
 - Rodada: passar o celular → ver número (com o tema e a escala) → dicas em voz alta → ordenar a fila com setas
   (pode trocar o tema) → revelar um por um → resultado.
 - Erro = número revelado menor que algum já revelado antes (cooperativo, sem placar).
+
+## Jogo 3: Na Mosca (pronto, nome provisório)
+- Valdir chamou de "Palpite Certo"; usamos nome próprio provisório. Ele ainda pode escolher o nome final.
+- Pergunta com resposta em número inteiro; cada um digita o palpite escondido num teclado numérico próprio
+  (não usa o teclado do celular). Quem chega mais perto ganha 1 ponto (empate: todos); acerto exato vale 2.
+- Partida de 5, 10, 15 ou 20 perguntas, com placar e pódio no fim. Placar fica em `session` no `App.jsx`
+  (zera ao começar partida nova).
+- 246 perguntas em `questions.js`, 9 assuntos. **Só fatos conferidos** e que não mudam (ou com o ano da informação).
+  Anos aparecem sem ponto de milhar (2016, não 2.016).
+
+## Conteúdo (regra geral)
+- Valdir quer MUITAS opções em todos os jogos para não repetir. Sempre que mexer num jogo, considere ampliar o conteúdo.
+- O app lembra no aparelho o que já saiu (até 3000 itens por jogo) e só repete quando acabar tudo.
 
 ## Sons
 - Todos os sons são sintetizados na hora com Web Audio API (`src/lib/sound.js`): sem arquivos, funciona offline.

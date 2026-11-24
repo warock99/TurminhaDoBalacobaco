@@ -10,6 +10,7 @@ export const CATEGORIES = [
       'Sushi', 'Churrasco', 'Pastel', 'Açaí', 'Pipoca', 'Sorvete', 'Macarrão', 'Tapioca',
       'Cuscuz', 'Moqueca', 'Strogonoff', 'Panqueca', 'Bolo de cenoura', 'Omelete', 'Salada',
       'Cachorro-quente', 'Esfirra', 'Paçoca', 'Pudim', 'Acarajé', 'Batata frita', 'Chocolate', 'Torta de limão',
+      'Lasanha de berinjela', 'Escondidinho', 'Bobó de camarão', 'Quindim', 'Arroz carreteiro', 'Baião de dois', 'Polenta', 'Risoto', 'Coxinha de frango', 'Empadão',
     ],
   },
   {
@@ -21,6 +22,7 @@ export const CATEGORIES = [
       'Jacaré', 'Cavalo', 'Vaca', 'Galinha', 'Papagaio', 'Tartaruga', 'Coelho', 'Cobra', 'Sapo',
       'Coruja', 'Abelha', 'Formiga', 'Borboleta', 'Polvo', 'Canguru', 'Urso', 'Capivara',
       'Tamanduá', 'Morcego', 'Camelo', 'Zebra',
+      'Onça-pintada', 'Arara', 'Bicho-preguiça', 'Lobo-guará', 'Pavão', 'Hipopótamo', 'Rinoceronte', 'Esquilo', 'Avestruz', 'Peixe-boi',
     ],
   },
   {
@@ -32,6 +34,7 @@ export const CATEGORIES = [
       'Academia', 'Biblioteca', 'Padaria', 'Zoológico', 'Estádio', 'Farmácia', 'Restaurante',
       'Delegacia', 'Museu', 'Parque de diversões', 'Fazenda', 'Rodoviária', 'Hotel', 'Banco',
       'Salão de beleza', 'Posto de gasolina', 'Circo', 'Acampamento', 'Feira', 'Piscina', 'Cemitério', 'Boate',
+      'Lan house', 'Lavanderia', 'Aquário', 'Planetário', 'Ferro-velho', 'Laboratório', 'Prisão', 'Castelo', 'Navio de cruzeiro', 'Estação espacial',
     ],
   },
   {
@@ -44,6 +47,7 @@ export const CATEGORIES = [
       'Cantor', 'Palhaço', 'Mecânico', 'Veterinário', 'Garçom', 'Fotógrafo', 'Jornalista',
       'Eletricista', 'Padeiro', 'Enfermeiro', 'Juiz', 'Carteiro', 'Programador', 'Agricultor',
       'Salva-vidas', 'Mágico', 'Pintor',
+      'Arquiteto', 'Psicólogo', 'Influenciador', 'Taxista', 'Costureira', 'Faxineiro', 'Engenheiro', 'Detetive', 'Ator', 'Confeiteiro',
     ],
   },
   {
@@ -55,6 +59,7 @@ export const CATEGORIES = [
       'Geladeira', 'Ventilador', 'Controle remoto', 'Mochila', 'Chave', 'Vela', 'Espelho',
       'Panela', 'Garrafa', 'Lanterna', 'Caneta', 'Cadeira', 'Fone de ouvido', 'Martelo', 'Vassoura',
       'Carregador', 'Liquidificador', 'Secador de cabelo', 'Sabonete', 'Toalha', 'Bola', 'Mala', 'Rede',
+      'Abajur', 'Grampeador', 'Cabide', 'Ralador', 'Colher de pau', 'Pente', 'Cofrinho', 'Despertador', 'Isqueiro', 'Pregador de roupa',
     ],
   },
   {
@@ -66,6 +71,7 @@ export const CATEGORIES = [
       'Ciclismo', 'Corrida', 'Xadrez', 'Golfe', 'Handebol', 'Capoeira', 'Futevôlei', 'Ginástica',
       'Escalada', 'Pingue-pongue', 'Boliche', 'Sinuca', 'Patinação', 'Esgrima', 'Hipismo',
       'Paraquedismo', 'Remo', 'Beisebol', 'Karatê', 'Mergulho', 'Queimada',
+      'Polo aquático', 'Rúgbi', 'Badminton', 'Arco e flecha', 'Levantamento de peso', 'Kitesurfe', 'Taekwondo', 'Triatlo', 'Futsal', 'Vôlei de praia',
     ],
   },
   {
@@ -78,6 +84,7 @@ export const CATEGORIES = [
       'Guaraná', 'Mate', 'Rodízio', 'Bloco de rua', 'Quentão', 'Fila do banco', 'Reality show',
       'Fusca', 'Feira livre', 'Mandioca', 'Chimarrão', 'Pastel de feira', 'Arraial', 'Sertanejo',
       'Funk', 'Torcida', 'Pé de moleque',
+      'Coxinha de padaria', 'Novela das nove', 'Bolo de rolo', 'Bumba meu boi', 'Frevo', 'Axé', 'Saci-Pererê', 'Pamonha', 'Açaí na tigela', 'Sertão',
     ],
   },
   {
@@ -89,6 +96,7 @@ export const CATEGORIES = [
       'Neve', 'Lua', 'Sol', 'Estrela', 'Rio', 'Oceano', 'Ilha', 'Caverna', 'Furacão', 'Terremoto',
       'Girassol', 'Cacto', 'Coqueiro', 'Lago', 'Relâmpago', 'Nuvem', 'Pôr do sol', 'Areia',
       'Geleira', 'Cometa', 'Pantanal', 'Orvalho', 'Folha seca',
+      'Manguezal', 'Recife de coral', 'Aurora boreal', 'Granizo', 'Neblina', 'Duna', 'Planície', 'Pedra preciosa', 'Musgo', 'Bambu',
     ],
   },
   {
@@ -101,6 +109,7 @@ export const CATEGORIES = [
       'Fogos de artifício', 'Pista de dança', 'Docinhos', 'Presente', 'Lembrancinha',
       'Amigo secreto', 'Open bar', 'Churrasco', 'Buquê', 'Piñata', 'Pula-pula', 'Chapéu de festa',
       'Ressaca', 'Despedida de solteiro', 'Serenata',
+      'Chá revelação', 'Bodas de ouro', 'Festa à fantasia', 'Mesversário', 'Bolo de três andares', 'Cotillon', 'Bexiga', 'Garçom de festa', 'Fila do buffet', 'Dança da cadeira',
     ],
   },
   {
@@ -112,6 +121,117 @@ export const CATEGORIES = [
       'Submarino', 'Foguete', 'Patinete', 'Caminhão', 'Ambulância', 'Barco', 'Balão de ar quente',
       'Carroça', 'Teleférico', 'Jet ski', 'Trator', 'Canoa', 'Limusine', 'Kart', 'Caiaque',
       'Monociclo', 'Disco voador', 'Carro de bombeiro', 'Van escolar', 'Bondinho', 'Tanque de guerra',
+      'Trem-bala', 'Riquixá', 'Hoverboard', 'Iate', 'Planador', 'Asa-delta', 'Charrete', 'Mototáxi', 'Veleiro', 'Ônibus de dois andares',
+    ],
+  },
+  {
+    id: 'frutas',
+    name: 'Frutas',
+    color: '#fda4af',
+    words: [
+      'Banana', 'Maçã', 'Abacaxi', 'Melancia', 'Manga', 'Morango', 'Uva', 'Laranja', 'Limão', 'Mamão',
+      'Goiaba', 'Maracujá', 'Caju', 'Jabuticaba', 'Acerola', 'Pitanga', 'Kiwi', 'Pera', 'Pêssego', 'Coco',
+      'Abacate', 'Cereja', 'Melão', 'Tangerina', 'Framboesa', 'Mirtilo', 'Carambola', 'Graviola', 'Cupuaçu', 'Pitaia',
+      'Jaca', 'Caqui', 'Ameixa', 'Figo', 'Lichia', 'Romã', 'Seriguela', 'Tamarindo', 'Atemoia', 'Cajá',
+    ],
+  },
+  {
+    id: 'corpo',
+    name: 'Corpo humano',
+    color: '#f9a8d4',
+    words: [
+      'Cotovelo', 'Joelho', 'Umbigo', 'Sobrancelha', 'Cílios', 'Orelha', 'Nariz', 'Queixo', 'Bochecha', 'Testa',
+      'Calcanhar', 'Unha', 'Língua', 'Dente', 'Coração', 'Pulmão', 'Estômago', 'Fígado', 'Cérebro', 'Esqueleto',
+      'Costas', 'Ombro', 'Pescoço', 'Tornozelo', 'Pulso', 'Barriga', 'Bumbum', 'Axila', 'Nuca', 'Panturrilha',
+      'Cabelo', 'Barba', 'Pinta', 'Covinha', 'Sarda', 'Gengiva', 'Garganta', 'Rim', 'Veia', 'Músculo',
+    ],
+  },
+  {
+    id: 'roupas',
+    name: 'Roupas e acessórios',
+    color: '#c4b5fd',
+    words: [
+      'Camiseta', 'Calça jeans', 'Bermuda', 'Vestido', 'Saia', 'Jaqueta', 'Moletom', 'Pijama', 'Cueca', 'Sutiã',
+      'Meia', 'Tênis', 'Chinelo', 'Bota', 'Salto alto', 'Boné', 'Chapéu', 'Gorro', 'Cachecol', 'Luva',
+      'Gravata', 'Terno', 'Cinto', 'Bolsa', 'Carteira', 'Brinco', 'Colar', 'Pulseira', 'Anel', 'Relógio de pulso',
+      'Biquíni', 'Sunga', 'Avental', 'Uniforme', 'Capa de chuva', 'Suspensório', 'Óculos de sol', 'Fantasia', 'Roupão', 'Macacão',
+    ],
+  },
+  {
+    id: 'casa',
+    name: 'Coisas de casa',
+    color: '#fcd34d',
+    words: [
+      'Sofá', 'Cama', 'Guarda-roupa', 'Tapete', 'Cortina', 'Fogão', 'Micro-ondas', 'Pia', 'Chuveiro', 'Privada',
+      'Máquina de lavar', 'Varal', 'Escada', 'Janela', 'Porta', 'Campainha', 'Lâmpada', 'Tomada', 'Interruptor', 'Ar-condicionado',
+      'Televisão', 'Estante', 'Mesa de jantar', 'Banheira', 'Quintal', 'Garagem', 'Telhado', 'Varanda', 'Lareira', 'Porão',
+      'Sótão', 'Despensa', 'Lixeira', 'Ferro de passar', 'Tábua de passar', 'Aspirador', 'Rodo', 'Balde', 'Vaso de planta', 'Capacho',
+    ],
+  },
+  {
+    id: 'escola',
+    name: 'Escola',
+    color: '#93c5fd',
+    words: [
+      'Lousa', 'Giz', 'Caderno', 'Lápis', 'Borracha', 'Apontador', 'Régua', 'Estojo', 'Merenda', 'Recreio',
+      'Prova', 'Lição de casa', 'Diretor', 'Boletim', 'Chamada', 'Uniforme escolar', 'Cantina', 'Quadra', 'Excursão', 'Formatura',
+      'Feira de ciências', 'Biblioteca da escola', 'Mochila de rodinha', 'Cola', 'Recuperação', 'Matemática', 'Educação física', 'Sinal do intervalo', 'Professor substituto', 'Trabalho em grupo',
+      'Compasso', 'Mapa-múndi', 'Dicionário', 'Calculadora', 'Carteira escolar', 'Inspetor', 'Gincana', 'Vestibular', 'Redação', 'Ditado',
+    ],
+  },
+  {
+    id: 'musica',
+    name: 'Música e instrumentos',
+    color: '#f0abfc',
+    words: [
+      'Violão', 'Guitarra', 'Bateria', 'Piano', 'Teclado', 'Violino', 'Flauta', 'Saxofone', 'Trompete', 'Pandeiro',
+      'Cavaquinho', 'Sanfona', 'Berimbau', 'Tamborim', 'Cuíca', 'Gaita', 'Harpa', 'Contrabaixo', 'Ukulele', 'Triângulo',
+      'Microfone', 'Caixa de som', 'Show', 'Karaokê', 'Coral', 'Orquestra', 'Maestro', 'DJ', 'Rap', 'Rock',
+      'Samba-enredo', 'Pagodeiro', 'Banda', 'Fone de ouvido', 'Partitura', 'Palco', 'Bis', 'Afinador', 'Batuque', 'Serenata',
+    ],
+  },
+  {
+    id: 'tecnologia',
+    name: 'Tecnologia',
+    color: '#67e8f9',
+    words: [
+      'Computador', 'Notebook', 'Tablet', 'Smartwatch', 'Impressora', 'Mouse', 'Wi-Fi', 'Senha', 'Aplicativo', 'Robô',
+      'Videogame', 'Controle de videogame', 'Drone', 'Pendrive', 'Selfie', 'Emoji', 'Figurinha', 'Áudio no zap', 'Grupo da família', 'Print',
+      'Live', 'Podcast', 'Câmera', 'Bateria fraca', 'Atualização', 'Vírus de computador', 'Nuvem', 'QR code', 'Assistente virtual', 'Realidade virtual',
+      'Hacker', 'Algoritmo', 'Bluetooth', 'Powerbank', 'Teclado gamer', 'Webcam', 'Streaming', 'Meme', 'Story', 'Modo avião',
+    ],
+  },
+  {
+    id: 'lendas',
+    name: 'Lendas e fantasia',
+    color: '#a5b4fc',
+    words: [
+      'Saci', 'Curupira', 'Mula sem cabeça', 'Boitatá', 'Iara', 'Boto cor-de-rosa', 'Lobisomem', 'Vampiro', 'Bruxa', 'Fada',
+      'Dragão', 'Unicórnio', 'Sereia', 'Zumbi', 'Fantasma', 'Duende', 'Gigante', 'Ogro', 'Elfo', 'Mago',
+      'Pirata', 'Princesa', 'Cavaleiro', 'Rei', 'Rainha', 'Gênio da lâmpada', 'Tapete voador', 'Varinha mágica', 'Poção', 'Castelo assombrado',
+      'Papai Noel', 'Coelhinho da Páscoa', 'Fada do dente', 'Bicho-papão', 'Cuca', 'Alienígena', 'Robô gigante', 'Super-herói', 'Vilão', 'Múmia',
+    ],
+  },
+  {
+    id: 'acoes',
+    name: 'Ações',
+    color: '#86efac',
+    words: [
+      'Dançar', 'Nadar', 'Cozinhar', 'Dormir', 'Espirrar', 'Bocejar', 'Correr', 'Pular corda', 'Assobiar', 'Cantar no chuveiro',
+      'Escovar os dentes', 'Tomar banho', 'Lavar louça', 'Passear com o cachorro', 'Tirar selfie', 'Fazer churrasco', 'Pescar', 'Acampar', 'Mergulhar', 'Escalar',
+      'Andar de bicicleta', 'Dirigir', 'Pintar', 'Desenhar', 'Ler', 'Fofocar', 'Roncar', 'Chorar', 'Gargalhar', 'Abraçar',
+      'Tricotar', 'Plantar', 'Malhar', 'Meditar', 'Maquiar', 'Barbear', 'Fazer compras', 'Mudar de casa', 'Dar um beijo', 'Pedir pizza',
+    ],
+  },
+  {
+    id: 'paises',
+    name: 'Países e cidades',
+    color: '#fdba74',
+    words: [
+      'Japão', 'China', 'Estados Unidos', 'México', 'Argentina', 'Portugal', 'Itália', 'França', 'Alemanha', 'Inglaterra',
+      'Egito', 'Índia', 'Austrália', 'Canadá', 'Rússia', 'Grécia', 'Espanha', 'Holanda', 'Jamaica', 'Chile',
+      'Paris', 'Nova York', 'Londres', 'Roma', 'Tóquio', 'Buenos Aires', 'Lisboa', 'Las Vegas', 'Dubai', 'Veneza',
+      'Salvador', 'Recife', 'Manaus', 'Gramado', 'Florianópolis', 'Fortaleza', 'Foz do Iguaçu', 'Ouro Preto', 'Bonito', 'Fernando de Noronha',
     ],
   },
 ]
