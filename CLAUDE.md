@@ -90,6 +90,13 @@ Jogadores são compartilhados entre todos os jogos.
 - Para criar um personagem novo: copiar um bloco em `CHARACTERS`, ajustar cores, desenho e `headBox`,
   e (se quiser animação própria) adicionar a classe e a animação no fim de `styles/global.css`.
 
+## Desempenho no celular
+- Não usar `filter: blur()` nem `backdrop-filter` em elementos grandes ou fixos: deixava o teclado do Android
+  abrindo e fechando devagar. Brilhos e manchas de cor são feitos com `radial-gradient`.
+- O fundo animado tem altura fixa (`100lvh`) para não ser redesenhado quando o teclado abre.
+- Enquanto um campo de texto está em foco, o `body` ganha a classe `typing` e as animações de fundo e dos
+  personagens pausam (ver `main.jsx`). Avatares pequenos (lista de jogadores) não são animados.
+
 ## Comandos
 - `npm install` — instala dependências
 - `npm run dev` — roda no computador (o `--host` permite abrir no celular na mesma rede Wi-Fi)

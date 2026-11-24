@@ -11,7 +11,7 @@ export default function Avatar({ name, index = 0, size = 44, color, character })
       style={{ width: size, height: size, fontSize: size * 0.38, '--avatar': bg }}
       aria-hidden="true"
     >
-      {ch ? <CharacterArt id={ch.id} crop="head" size={size} animated={size >= 48} /> : initials(name)}
+      {ch ? <CharacterArt id={ch.id} crop="head" size={size} animated={size >= 56} /> : initials(name)}
     </span>
   )
 }
