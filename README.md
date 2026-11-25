@@ -11,6 +11,7 @@ No Android, abra o link no Chrome e toque em **⋮ → Adicionar à tela inicial
 - **Termômetro** (nome provisório) — cada um tem um número secreto, dá uma dica sobre o tema e a turma tenta pôr todo mundo em ordem.
 - **Na Mosca** (nome provisório) — perguntas com resposta em número: quem chutar mais perto leva o ponto.
 - **Quem Mentiu?** (nome provisório) — todo mundo responde a mesma pergunta, menos um: descubram quem respondeu outra coisa.
+- **Quem Sou Eu?** — celular na testa: a turma vê quem você é e responde sim ou não às suas perguntas.
 
 ## Para desenvolver
 ```bash

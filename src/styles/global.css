@@ -2710,3 +2710,197 @@ body.typing .liar .liar-drop {
     animation: none;
   }
 }
+
+/* ===================================================================
+   Quem Sou Eu? (celular na testa)
+   =================================================================== */
+
+.result .scoreboard {
+  width: 100%;
+}
+
+.qse-countdown {
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.qse-countdown p {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.qse-countdown strong {
+  font-family: var(--font-title);
+  font-size: 9rem;
+  line-height: 1;
+  color: #facc15;
+}
+
+/* Tela da carta: cores fortes e letras enormes para a turma ler de longe. */
+.qse-play {
+  --cat: #facc15;
+  gap: 12px;
+  padding: calc(var(--safe-top) + 12px) 16px calc(var(--safe-bottom, 0px) + 16px);
+  background: radial-gradient(circle at 50% 35%, color-mix(in srgb, var(--cat) 35%, transparent), transparent 70%);
+}
+
+.qse-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qse-timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--surface);
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 1.2rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.qse-timer.urgent {
+  color: #fda4af;
+  animation: tremble 0.25s linear infinite;
+}
+
+.qse-count {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  font-weight: 800;
+}
+
+.qse-count:active {
+  transform: scale(0.94);
+}
+
+.qse-bar {
+  height: 8px;
+  border-radius: 99px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.qse-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #22c55e, #facc15);
+  transform-origin: left;
+  transition: transform 0.25s linear;
+}
+
+.qse-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px 16px;
+  border-radius: 28px;
+  background: #fffbea;
+  color: #1a1033;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35), inset 0 0 0 6px var(--cat);
+}
+
+.qse-cat {
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--cat);
+  color: #1a1033;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.qse-name {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 14vw, 5rem);
+  line-height: 1.02;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.qse-card small {
+  font-weight: 800;
+  color: #6b5f8a;
+}
+
+.qse-actions {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 12px;
+}
+
+.qse-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 72px;
+  border: 0;
+  border-radius: 22px;
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  transition: transform 0.12s ease;
+}
+
+.qse-btn:active {
+  transform: scale(0.95);
+}
+
+.qse-btn.skip {
+  background: linear-gradient(135deg, #f43f5e, #9f1239);
+  box-shadow: 0 6px 0 #881337;
+}
+
+.qse-btn.hit {
+  background: linear-gradient(135deg, #22c55e, #15803d);
+  box-shadow: 0 6px 0 #14532d;
+}
+
+.forehead .forehead-phone {
+  transform-box: view-box;
+  transform-origin: 100px 76px;
+  animation: phone-wobble 2.2s ease-in-out infinite;
+}
+
+.forehead .forehead-pupils {
+  animation: look-up 3s ease-in-out infinite;
+}
+
+@keyframes phone-wobble {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
+}
+
+@keyframes look-up {
+  0%, 100% { transform: translate(0, 0); }
+  30% { transform: translate(-3px, -2px); }
+  60% { transform: translate(3px, -2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .forehead .forehead-phone,
+  .forehead .forehead-pupils,
+  .qse-timer.urgent {
+    animation: none;
+  }
+}

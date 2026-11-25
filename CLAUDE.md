@@ -39,6 +39,7 @@ src/
   games/termometro/    jogo Termômetro (logic.js, themes.js, Setup, Play, Result, Art)
   games/namosca/       jogo Na Mosca (logic.js, questions.js, Setup, Play, Result, Art)
   games/quemmentiu/    jogo Quem Mentiu? (logic.js, pairs.js, Setup, Play, Result, Art)
+  games/quemsoueu/     jogo Quem Sou Eu? (logic.js, cards.js, Setup, Play, Result, Art)
   lib/                 utilidades (storage, random, players, feedback, sound)
   styles/              global.css (tema em variáveis CSS no :root) e fonts.css
 public/                ícones do app (SVG + PNG gerados a partir do SVG)
@@ -90,6 +91,16 @@ Jogadores são compartilhados entre todos os jogos.
   votação (1 jogador ou "revelar sem votar") → resultado com a pergunta do impostor e a resposta dele.
 - 171 pares próprios em `pairs.js` (70 sim/não, 45 número, 28 escolha, 28 texto). Não se repetem.
   No Setup dá para escolher os tipos de pergunta.
+
+## Jogo 5: Quem Sou Eu? (pronto)
+- Pedido do Valdir: o "quem sou eu" tradicional, **uma pessoa adivinha por vez**. 2 a 20 jogadores.
+- Vez em rodízio (`session.turn`), com botão "Trocar quem adivinha". Contagem 3-2-1 para pôr o celular na testa.
+- Carta com letras enormes e fundo claro (legível de longe), categoria, cronômetro opcional (sem/1/2/3/5 min),
+  contador de perguntas (a turma toca), botões "Desistiu" e "Acertou!". Tela fica acesa (Wake Lock) durante a carta.
+- Resultado: o que era, tempo e perguntas, placar de acertos da partida (`session.scores`) e "Próximo: fulano".
+- 520 cartas em `cards.js`, 12 categorias (Animais, Profissões, Objetos, Comidas e bebidas, Lugares, Países e
+  cidades, Famosos do Brasil, Famosos do mundo, Histórias e folclore, Esportes e brincadeiras,
+  Transportes e máquinas, Natureza e corpo). Não se repetem. Famosos: só gente muito conhecida.
 
 ## Conteúdo (regra geral)
 - Valdir quer MUITAS opções em todos os jogos para não repetir. Sempre que mexer num jogo, considere ampliar o conteúdo.
