@@ -1797,6 +1797,7 @@ button.game-card:active {
 .ch-sargento .ch-eyes { animation-delay: -2.1s; }
 .ch-quadrado .ch-eyes { animation-delay: -0.6s; }
 .ch-cavanhaque .ch-eyes { animation-delay: -3s; }
+.ch-zoeiro .ch-eyes { animation-delay: -1.8s; }
 
 @keyframes ch-idle {
   0%, 100% { transform: translateY(0) scaleY(1); }
@@ -1898,6 +1899,32 @@ button.game-card:active {
 @keyframes ponytail {
   0%, 100% { transform: rotate(-6deg); }
   50% { transform: rotate(8deg); }
+}
+
+/* Zoeiro: língua mexendo e mãos balançando os dedos */
+.character.animated .ch-tongue {
+  transform-box: view-box;
+  transform-origin: 60px 70px;
+  animation: tongue 0.9s ease-in-out infinite;
+}
+
+@keyframes tongue {
+  0%, 100% { transform: rotate(-8deg) scaleY(1); }
+  50% { transform: rotate(8deg) scaleY(1.12); }
+}
+
+.character.animated .ch-hand-l,
+.character.animated .ch-hand-r {
+  transform-box: view-box;
+  animation: hand-wiggle 0.45s ease-in-out infinite alternate;
+}
+
+.ch-hand-l { transform-origin: 38px 102px; }
+.ch-hand-r { transform-origin: 82px 102px; animation-direction: alternate-reverse !important; }
+
+@keyframes hand-wiggle {
+  from { transform: rotate(-5deg); }
+  to { transform: rotate(5deg); }
 }
 
 /* Testuda e Diva mexem os braços de leve */

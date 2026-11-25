@@ -103,13 +103,15 @@ Jogadores são compartilhados entre todos os jogos.
 - Pedido do Valdir: ter áudio. Música de fundo ainda não foi feita.
 
 ## Personagens (pronto)
-- 5 personagens animados descritos pelo Valdir (caricaturas carinhosas da turma), em `components/Characters.jsx`:
+- 6 personagens animados descritos pelo Valdir (caricaturas carinhosas da turma), em `components/Characters.jsx`:
   - **Testuda**: menina com a testa enorme (com brilho passeando), cabelo puxado para trás.
   - **Diva**: menina de pele bem escura (tom rico e bonito), black power, argolas douradas, vestido amarelo.
   - **Sargento**: cabelo raspado militar, muito forte, flexionando o braço, bumbum avantajado que balança.
   - **Quadradão**: baixinho, forte, cabeça bem quadrada que balança.
   - **Cavanhaque**: pele morena, cavanhaque e bigode, cabelo grande preso em rabo de cavalo que balança.
-- Valdir falou em 6; descreveu 5. Falta o sexto (aguardando descrição). Nomes são provisórios.
+  - **Zoeiro**: rapaz branco de cabelo curtinho, mãos levantadas com os dedos abertos para a frente (balançando),
+    boca aberta e língua de fora (mexendo).
+- Nomes são provisórios.
 - Sem foto de câmera: tudo em SVG + animação CSS (piscar, respirar e um movimento próprio de cada um).
 - Escolha opcional no cadastro de jogadores (faixa rolável); tocar no avatar na lista troca o personagem.
   Pode repetir personagem; mostra quem já está usando. Quem não escolhe fica com círculo colorido + iniciais.

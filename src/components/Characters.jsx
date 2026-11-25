@@ -33,6 +33,22 @@ function Legs({ skin, pants, shoes = '#1f2937', top = 128, x1 = 48, x2 = 72, h =
   )
 }
 
+/** Mão aberta com os dedos espalhados, virada para a frente. */
+function OpenHand({ x, y, skin, flip = false }) {
+  const s = flip ? -1 : 1
+  return (
+    <g transform={`translate(${x} ${y}) scale(${s} 1)`}>
+      <rect x="-9" y="-22" width="5" height="15" rx="2.5" fill={skin} transform="rotate(-18 -6.5 -8)" />
+      <rect x="-4" y="-25" width="5" height="17" rx="2.5" fill={skin} transform="rotate(-6 -1.5 -8)" />
+      <rect x="1.5" y="-24" width="5" height="16" rx="2.5" fill={skin} transform="rotate(6 4 -8)" />
+      <rect x="6" y="-20" width="5" height="13" rx="2.5" fill={skin} transform="rotate(18 8.5 -8)" />
+      <rect x="-16" y="-6" width="5" height="12" rx="2.5" fill={skin} transform="rotate(-60 -13.5 0)" />
+      <ellipse cx="0" cy="0" rx="10" ry="10" fill={skin} />
+      <path d="M-4 2q4 3 8 0" stroke="#e0a88a" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+    </g>
+  )
+}
+
 export const CHARACTERS = [
   {
     id: 'testuda',
@@ -249,6 +265,54 @@ export const CHARACTERS = [
           <path d="M50 66c-2-3 8-5 10-3c2-2 12 0 10 3c-4 2-6 1-10 0c-4 1-6 2-10 0z" fill={hair} />
           <path d="M54 72q6 3 12 0" stroke="#fda4af" strokeWidth="2.5" strokeLinecap="round" fill="none" />
           <path className="ch-goatee" d="M52 76c2 8 5 12 8 12s6-4 8-12c-4 2-12 2-16 0z" fill={hair} />
+        </>
+      )
+    },
+  },
+  {
+    id: 'zoeiro',
+    name: 'Zoeiro',
+    color: '#bef264',
+    headBox: '8 4 104 104',
+    draw: () => {
+      const skin = '#f8d5bd'
+      const hair = '#7a4a24'
+      return (
+        <>
+          <Legs pants="#1d4ed8" shoes="#111827" top={130} h={24} />
+          {/* camiseta */}
+          <path d="M36 98c0-4 8-6 24-6s24 2 24 6l4 36H32z" fill="#65a30d" />
+          <path d="M50 94q10 8 20 0" stroke="#3f6212" strokeWidth="3" fill="none" strokeLinecap="round" />
+          <rect x="54" y="80" width="12" height="14" fill="#efc3a6" />
+          {/* braços levantados com as mãos abertas, dedos para a frente */}
+          <g className="ch-hand-l">
+            <path d="M38 102L22 76" stroke={skin} strokeWidth="11" strokeLinecap="round" />
+            <path d="M38 100l-6-6" stroke="#65a30d" strokeWidth="13" strokeLinecap="round" />
+            <OpenHand x={19} y={66} skin={skin} />
+          </g>
+          <g className="ch-hand-r">
+            <path d="M82 102L98 76" stroke={skin} strokeWidth="11" strokeLinecap="round" />
+            <path d="M82 100l6-6" stroke="#65a30d" strokeWidth="13" strokeLinecap="round" />
+            <OpenHand x={101} y={66} skin={skin} flip />
+          </g>
+          {/* cabeça */}
+          <ellipse cx="60" cy="52" rx="26" ry="30" fill={skin} />
+          <ellipse cx="34" cy="54" rx="4" ry="7" fill={skin} />
+          <ellipse cx="86" cy="54" rx="4" ry="7" fill={skin} />
+          {/* cabelinho curto, cortadinho */}
+          <path d="M34 44c-2-18 10-28 26-28s28 10 26 28c-4-8-8-11-12-12-4 3-10 4-14 2-6 3-14 3-18 0-4 2-6 5-8 10z" fill={hair} />
+          <path d="M42 30q4-3 8-2M56 26q4-2 8 0M70 28q4 0 7 3" stroke="#93603a" strokeWidth="2" strokeLinecap="round" fill="none" />
+          <path d="M43 39l10 1M77 39l-10 1" stroke={hair} strokeWidth="3.5" strokeLinecap="round" />
+          <Eyes y={49} gap={11} r={5.5} />
+          <ellipse cx="42" cy="62" rx="5" ry="3" fill="#f9a8a8" opacity=".6" />
+          <ellipse cx="78" cy="62" rx="5" ry="3" fill="#f9a8a8" opacity=".6" />
+          {/* boca aberta com a língua de fora */}
+          <ellipse cx="60" cy="69" rx="10" ry="7" fill="#4c0519" />
+          <path d="M51 66q9 -3 18 0" stroke="#fff" strokeWidth="3" strokeLinecap="round" fill="none" />
+          <g className="ch-tongue">
+            <path d="M53 70h14v10a7 7 0 01-14 0z" fill="#fb7185" />
+            <path d="M60 71v9" stroke="#e11d48" strokeWidth="1.8" strokeLinecap="round" />
+          </g>
         </>
       )
     },
