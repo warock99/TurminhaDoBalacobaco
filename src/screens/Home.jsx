@@ -69,6 +69,7 @@ export default function Home({ onPick }) {
         </div>
 
         <p className="home-foot">Funciona sem internet. Sem cadastro.</p>
+        <p className="home-version">Versão de {__APP_BUILD__}</p>
       </main>
     </div>
   )

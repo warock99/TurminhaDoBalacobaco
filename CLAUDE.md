@@ -113,7 +113,7 @@ Jogadores são compartilhados entre todos os jogos.
     boca aberta e língua de fora (mexendo).
 - Nomes são provisórios.
 - Sem foto de câmera: tudo em SVG + animação CSS (piscar, respirar e um movimento próprio de cada um).
-- Escolha opcional no cadastro de jogadores (faixa rolável); tocar no avatar na lista troca o personagem.
+- Escolha opcional no cadastro de jogadores (grade com todos visíveis, sem arrastar para o lado); tocar no avatar na lista troca o personagem.
   Pode repetir personagem; mostra quem já está usando. Quem não escolhe fica com círculo colorido + iniciais.
 - Avatar usa só a cabeça (`headBox`); a tela de passar o celular mostra o corpo inteiro.
 - Para criar um personagem novo: copiar um bloco em `CHARACTERS`, ajustar cores, desenho e `headBox`,
@@ -133,6 +133,8 @@ Jogadores são compartilhados entre todos os jogos.
 - `npm run preview` — testa a versão final
 
 ## Publicação
+- A tela inicial mostra "Versão de dd/mm, hh:mm" (hora de Brasília do build) para conferir se o celular pegou a versão nova.
+- O app instalado (GitHub Pages) se atualiza sozinho: `registerType: 'autoUpdate'` no PWA.
 - GitHub Pages via `.github/workflows/deploy.yml` a cada push na `main`.
 - Endereço: https://warock99.github.io/TurminhaDoBalacobaco/
 - Precisa ativar uma vez: Settings → Pages → Source: GitHub Actions.

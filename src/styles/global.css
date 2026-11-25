@@ -811,6 +811,13 @@ button.game-card:active {
   padding-top: 10px;
 }
 
+.home-version {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
 /* ---------- Apresentação do jogo ---------- */
 
 .intro-hero {
@@ -1993,17 +2000,23 @@ button.game-card:active {
 }
 
 .char-picker.row {
-  display: flex;
+  /* Todos os personagens visíveis de uma vez, sem precisar arrastar para o lado. */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 8px;
-  overflow-x: auto;
-  margin: 0 -16px;
-  padding: 4px 16px 8px;
-  scroll-snap-type: x proximity;
-  scrollbar-width: none;
+  padding-top: 4px;
 }
 
-.char-picker.row::-webkit-scrollbar {
-  display: none;
+.char-picker.row .char-option {
+  width: auto;
+  min-width: 0;
+}
+
+.char-picker.row .char-name {
+  font-size: 0.78rem;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .char-picker.grid {
