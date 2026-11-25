@@ -2904,3 +2904,220 @@ body.typing .liar .liar-drop {
     animation: none;
   }
 }
+
+/* ===================================================================
+   Eu Duvido! (lista secreta com mediador)
+   =================================================================== */
+
+.ed-theme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.ed-theme-card {
+  --chip: #22d3ee;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 18px;
+  border-radius: var(--radius);
+  background: linear-gradient(150deg, rgba(6, 182, 212, 0.2), rgba(29, 78, 216, 0.24));
+  border: 1.5px solid rgba(34, 211, 238, 0.5);
+  text-align: center;
+}
+
+.ed-theme-card h2 {
+  font-size: clamp(1.5rem, 7vw, 2rem);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.ed-theme-card small {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.ed-head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ed-head p {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.ed-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ed-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.ed-stat.ok {
+  background: rgba(74, 222, 128, 0.18);
+  color: #bbf7d0;
+}
+
+.ed-stat.bad {
+  background: rgba(251, 113, 133, 0.18);
+  color: #fecdd3;
+}
+
+.ed-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ed-final .ed-list li {
+  animation: rise 0.4s ease both;
+}
+
+.ed-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 8px 14px 8px 8px;
+  border-radius: 16px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  text-align: left;
+  font-weight: 800;
+  font-size: 1.08rem;
+  transition: transform 0.15s var(--ease-bounce), border-color 0.2s, background 0.2s;
+}
+
+button.ed-item:active {
+  transform: scale(0.98);
+}
+
+.ed-item.on {
+  border-color: #4ade80;
+  background: rgba(74, 222, 128, 0.18);
+}
+
+.ed-item.missed {
+  opacity: 0.85;
+  border-style: dashed;
+}
+
+.ed-num {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: var(--surface-2);
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+}
+
+.ed-item.on .ed-num {
+  background: #22c55e;
+  color: #fff;
+}
+
+.ed-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.ed-missed-tag {
+  flex: none;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #fda4af;
+}
+
+.ed-source {
+  font-size: 0.82rem;
+}
+
+.ed-final {
+  width: 100%;
+}
+
+.ed-final h3 {
+  margin-bottom: 10px;
+  text-wrap: balance;
+}
+
+.ed-flash {
+  position: fixed;
+  left: 50%;
+  top: 42%;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 22px 30px;
+  border-radius: 28px;
+  color: #fff;
+  pointer-events: none;
+  animation: ed-flash 1.3s ease both;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.ed-flash.ok {
+  background: linear-gradient(135deg, #22c55e, #15803d);
+}
+
+.ed-flash.bad {
+  background: linear-gradient(135deg, #f43f5e, #9f1239);
+}
+
+.ed-flash strong {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  white-space: nowrap;
+}
+
+@keyframes ed-flash {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
+  15% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+  25%, 80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
+}
+
+.doubt .doubt-brow {
+  transform-box: view-box;
+  transform-origin: 120px 52px;
+  animation: brow 2.4s ease-in-out infinite;
+}
+
+@keyframes brow {
+  0%, 60%, 100% { transform: translateY(0) rotate(0); }
+  70%, 85% { transform: translateY(-5px) rotate(-6deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doubt .doubt-brow,
+  .ed-final .ed-list li {
+    animation: none;
+  }
+}

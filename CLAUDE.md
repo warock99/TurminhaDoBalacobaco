@@ -40,13 +40,14 @@ src/
   games/namosca/       jogo Na Mosca (logic.js, questions.js, Setup, Play, Result, Art)
   games/quemmentiu/    jogo Quem Mentiu? (logic.js, pairs.js, Setup, Play, Result, Art)
   games/quemsoueu/     jogo Quem Sou Eu? (logic.js, cards.js, Setup, Play, Result, Art)
+  games/euduvido/      jogo Eu Duvido! (logic.js, lists.js, Setup, Play, Result, Art)
   lib/                 utilidades (storage, random, players, feedback, sound)
   styles/              global.css (tema em variáveis CSS no :root) e fonts.css
 public/                ícones do app (SVG + PNG gerados a partir do SVG)
 ```
 
 Fluxo de telas: Início → Apresentação do jogo → Jogadores → Configuração → Partida → Resultado.
-Jogadores são compartilhados entre todos os jogos.
+Jogadores são compartilhados entre todos os jogos. Jogo com `noPlayers: true` (Eu Duvido!) pula a tela de jogadores.
 
 ## Como adicionar um jogo novo
 1. Criar `src/games/<id>/index.js` exportando: `id, name, tagline, gradient, minPlayers, maxPlayers, duration,
@@ -101,6 +102,15 @@ Jogadores são compartilhados entre todos os jogos.
 - 520 cartas em `cards.js`, 12 categorias (Animais, Profissões, Objetos, Comidas e bebidas, Lugares, Países e
   cidades, Famosos do Brasil, Famosos do mundo, Histórias e folclore, Esportes e brincadeiras,
   Transportes e máquinas, Natureza e corpo). Não se repetem. Famosos: só gente muito conhecida.
+
+## Jogo 6: Eu Duvido! (pronto, nome provisório)
+- Pedido do Valdir. **Sem cadastro de jogadores** (`noPlayers: true`): só o mediador usa o celular e não joga.
+- Rodada: tema para todos lerem → mediador vê a lista → a turma fala itens; quando alguém grita "eu duvido",
+  o mediador confere. Tocar no item marca "Está na lista!"; botão "Não está na lista!" conta chute errado.
+  No fim mostra a lista inteira, com o que ninguém falou.
+- Regra da mesa: se estava na lista, perde quem duvidou; se não estava, perde quem falou.
+- 50 listas em `lists.js`, 5 assuntos, cada uma com fonte e ano. **Só dados conferidos**; a ordem não importa.
+  Valdir sugeriu temas como "cursos mais feitos" e "filmes mais vistos": só entra lista com ranking confiável.
 
 ## Conteúdo (regra geral)
 - Valdir quer MUITAS opções em todos os jogos para não repetir. Sempre que mexer num jogo, considere ampliar o conteúdo.

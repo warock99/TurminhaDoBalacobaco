@@ -90,7 +90,7 @@ export default function App() {
       />
     )
   } else if (screen === 'intro') {
-    content = <GameIntro game={game} onBack={back} onPlay={() => go('players')} />
+    content = <GameIntro game={game} onBack={back} onPlay={() => go(game.noPlayers ? 'setup' : 'players')} />
   } else if (screen === 'players') {
     content = (
       <Players
@@ -154,7 +154,7 @@ export default function App() {
           startRound()
           replace('play')
         }}
-        onSetup={() => resetTo(['home', 'intro', 'players', 'setup'])}
+        onSetup={() => resetTo(game.noPlayers ? ['home', 'intro', 'setup'] : ['home', 'intro', 'players', 'setup'])}
         onPlayers={() => resetTo(['home', 'intro', 'players'])}
         onHome={() => resetTo(['home'])}
       />
