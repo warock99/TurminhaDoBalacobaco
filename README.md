@@ -13,6 +13,7 @@ No Android, abra o link no Chrome e toque em **⋮ → Adicionar à tela inicial
 - **Quem Mentiu?** (nome provisório) — todo mundo responde a mesma pergunta, menos um: descubram quem respondeu outra coisa.
 - **Quem Sou Eu?** — celular na testa: a turma vê quem você é e responde sim ou não às suas perguntas.
 - **Eu Duvido!** (nome provisório) — o mediador vê uma lista secreta (tipo top 10), a turma chuta itens e alguém pode gritar "eu duvido".
+- **Bomba Secreta** (nome provisório) — uma das opções da categoria é a bomba: quem escolher, explode e sai do jogo.
 
 ## Para desenvolver
 ```bash

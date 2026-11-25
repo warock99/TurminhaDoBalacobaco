@@ -41,6 +41,7 @@ src/
   games/quemmentiu/    jogo Quem Mentiu? (logic.js, pairs.js, Setup, Play, Result, Art)
   games/quemsoueu/     jogo Quem Sou Eu? (logic.js, cards.js, Setup, Play, Result, Art)
   games/euduvido/      jogo Eu Duvido! (logic.js, lists.js, Setup, Play, Result, Art)
+  games/bomba/         jogo Bomba Secreta (logic.js, categories.js, Setup, Play, Result, Art)
   lib/                 utilidades (storage, random, players, feedback, sound)
   styles/              global.css (tema em variáveis CSS no :root) e fonts.css
 public/                ícones do app (SVG + PNG gerados a partir do SVG)
@@ -66,7 +67,7 @@ Jogadores são compartilhados entre todos os jogos. Jogo com `noPlayers: true` (
 ## Jogo 2: Termômetro (pronto, nome provisório)
 - Mecânica estilo ITO com nome e temas próprios. Valdir ainda vai escolher o nome final.
 - 2 a 20 jogadores. Cada um recebe um número diferente (faixa 1–10, 1–50 ou 1–100; nunca menor que o nº de jogadores).
-- 150 temas próprios em `themes.js`, cada um com escala (o que vale 1 e o que vale o máximo), em 8 grupos:
+- 210 temas próprios em `themes.js`, cada um com escala (o que vale 1 e o que vale o máximo), em 8 grupos:
   Dia a dia, Comida, Emoções, Absurdos, Brasil, Trabalho e escola, Amor e amizade, Diversão e lazer.
   Temas não se repetem entre rodadas.
 - Rodada: passar o celular → ver número (com o tema e a escala) → dicas em voz alta → ordenar a fila com setas
@@ -90,7 +91,7 @@ Jogadores são compartilhados entre todos os jogos. Jogo com `noPlayers: true` (
   escolha entre opções (mesmas opções para as duas perguntas) e texto curto (até 40 letras).
 - Rodada: passar o celular → responder escondido → mostra a pergunta da turma e as respostas de todos →
   votação (1 jogador ou "revelar sem votar") → resultado com a pergunta do impostor e a resposta dele.
-- 171 pares próprios em `pairs.js` (70 sim/não, 45 número, 28 escolha, 28 texto). Não se repetem.
+- 261 pares próprios em `pairs.js` (100 sim/não, 70 número, 43 escolha, 48 texto). Não se repetem.
   No Setup dá para escolher os tipos de pergunta.
 
 ## Jogo 5: Quem Sou Eu? (pronto)
@@ -111,6 +112,14 @@ Jogadores são compartilhados entre todos os jogos. Jogo com `noPlayers: true` (
 - Regra da mesa: se estava na lista, perde quem duvidou; se não estava, perde quem falou.
 - 50 listas em `lists.js`, 5 assuntos, cada uma com fonte e ano. **Só dados conferidos**; a ordem não importa.
   Valdir sugeriu temas como "cursos mais feitos" e "filmes mais vistos": só entra lista com ranking confiável.
+
+## Jogo 7: Bomba Secreta (pronto, nome provisório)
+- Pedido do Valdir ("item proibido": quem falar é eliminado). 2 a 20 jogadores, eliminação até sobrar um campeão.
+- Cada rodada sorteia uma categoria e monta um tabuleiro com até 12 opções (sorteadas da lista da categoria);
+  uma delas é a bomba, que **ninguém sabe** qual é. Na sua vez, a pessoa fala a opção e toca nela.
+  Bomba = explosão (som `sound.boom()` sintetizado, vibração, tela tremendo) e a pessoa sai.
+- Quem está vivo, de quem é a vez e o número da rodada ficam em `session` (zera ao começar partida nova).
+- 65 categorias em `categories.js`, 5 assuntos, com 7 a 16 itens cada. Sem emojis: arte só em SVG/CSS.
 
 ## Conteúdo (regra geral)
 - Valdir quer MUITAS opções em todos os jogos para não repetir. Sempre que mexer num jogo, considere ampliar o conteúdo.
