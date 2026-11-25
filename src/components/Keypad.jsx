@@ -1,13 +1,17 @@
-import Icon from '../../components/Icon.jsx'
-import { vibrate } from '../../lib/feedback.js'
-import { sound } from '../../lib/sound.js'
-import { formatNumber } from './logic.js'
+import Icon from './Icon.jsx'
+import { vibrate } from '../lib/feedback.js'
+import { sound } from '../lib/sound.js'
+
+/** Formata com ponto de milhar, menos quando plain (anos). */
+function formatNumber(n, plain) {
+  return plain ? String(n) : Number(n).toLocaleString('pt-BR')
+}
 
 const KEYS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'del', '0', '000']
 const MAX_DIGITS = 10
 
 /** Teclado numérico próprio do app: evita o teclado do celular e fica grande para o dedo. */
-export default function Keypad({ value, onChange, unit, plain = false }) {
+export default function Keypad({ value, onChange, unit, plain = false, placeholder = 'Seu palpite' }) {
   const press = (k) => {
     vibrate(8)
     sound.soft()
@@ -21,7 +25,7 @@ export default function Keypad({ value, onChange, unit, plain = false }) {
   return (
     <div className="keypad-wrap">
       <div className={`keypad-display ${value ? '' : 'empty'}`} aria-live="polite">
-        <strong>{value ? formatNumber(value, plain) : 'Seu palpite'}</strong>
+        <strong>{value ? formatNumber(value, plain) : placeholder}</strong>
         {unit && value && <small>{unit}</small>}
       </div>
       <div className="keypad">

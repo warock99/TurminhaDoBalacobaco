@@ -32,12 +32,13 @@ Uso principal em celular Android; desenvolvido e testado também no computador.
 ```
 src/
   App.jsx              navegação entre telas + botão voltar do Android
-  components/          peças reutilizáveis (Button, Screen, Avatar, Characters, CharacterPicker, Chip, Toggle, Stepper, Modal, Icon, Background, SoundToggle)
+  components/          peças reutilizáveis (Button, Screen, Avatar, Characters, CharacterPicker, Chip, Toggle, Stepper, Modal, Icon, Background, SoundToggle, Keypad)
   screens/             telas comuns a todos os jogos (Home, GameIntro, Players)
   games/index.js       registro de jogos (lista GAMES e COMING_SOON)
   games/impostor/      jogo Impostor (logic.js, words.js, Setup, Play, Result, Art)
   games/termometro/    jogo Termômetro (logic.js, themes.js, Setup, Play, Result, Art)
-  games/namosca/       jogo Na Mosca (logic.js, questions.js, Keypad, Setup, Play, Result, Art)
+  games/namosca/       jogo Na Mosca (logic.js, questions.js, Setup, Play, Result, Art)
+  games/quemmentiu/    jogo Quem Mentiu? (logic.js, pairs.js, Setup, Play, Result, Art)
   lib/                 utilidades (storage, random, players, feedback, sound)
   styles/              global.css (tema em variáveis CSS no :root) e fonts.css
 public/                ícones do app (SVG + PNG gerados a partir do SVG)
@@ -78,6 +79,17 @@ Jogadores são compartilhados entre todos os jogos.
   (zera ao começar partida nova).
 - 246 perguntas em `questions.js`, 9 assuntos. **Só fatos conferidos** e que não mudam (ou com o ano da informação).
   Anos aparecem sem ponto de milhar (2016, não 2.016).
+
+## Jogo 4: Quem Mentiu? (pronto, nome provisório)
+- Impostor com perguntas, pedido do Valdir. 3 a 20 jogadores, **sempre 1 impostor**.
+- Todos recebem a mesma pergunta; o impostor recebe outra parecida, com o mesmo tipo de resposta.
+  **O impostor não sabe que é o impostor**: a tela é igual para todos, só muda o texto da pergunta.
+- Tipos de resposta: sim/não (botões grandes), número (teclado próprio `components/Keypad.jsx`),
+  escolha entre opções (mesmas opções para as duas perguntas) e texto curto (até 40 letras).
+- Rodada: passar o celular → responder escondido → mostra a pergunta da turma e as respostas de todos →
+  votação (1 jogador ou "revelar sem votar") → resultado com a pergunta do impostor e a resposta dele.
+- 171 pares próprios em `pairs.js` (70 sim/não, 45 número, 28 escolha, 28 texto). Não se repetem.
+  No Setup dá para escolher os tipos de pergunta.
 
 ## Conteúdo (regra geral)
 - Valdir quer MUITAS opções em todos os jogos para não repetir. Sempre que mexer num jogo, considere ampliar o conteúdo.

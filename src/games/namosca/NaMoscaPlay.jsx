@@ -5,7 +5,7 @@ import Avatar from '../../components/Avatar.jsx'
 import { CharacterArt } from '../../components/Characters.jsx'
 import { sound } from '../../lib/sound.js'
 import { vibrate } from '../../lib/feedback.js'
-import Keypad from './Keypad.jsx'
+import Keypad from '../../components/Keypad.jsx'
 import { scoreRound } from './logic.js'
 import { QUESTION_GROUPS } from './questions.js'
 

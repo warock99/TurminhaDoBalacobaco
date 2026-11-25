@@ -2416,3 +2416,257 @@ body.typing .character {
 .result .podium {
   width: 100%;
 }
+
+/* ===================================================================
+   Quem Mentiu?
+   =================================================================== */
+
+.qm-question {
+  --chip: #a78bfa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 18px;
+  border-radius: var(--radius);
+  background: linear-gradient(150deg, rgba(34, 211, 238, 0.16), rgba(124, 58, 237, 0.22));
+  border: 1.5px solid rgba(167, 139, 250, 0.5);
+  text-align: center;
+}
+
+.qm-question h2 {
+  font-size: clamp(1.4rem, 6.5vw, 1.9rem);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.qm-yesno {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.qm-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qm-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 56px;
+  padding: 12px 18px;
+  border-radius: 18px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  font-weight: 800;
+  font-size: 1.05rem;
+  text-align: left;
+  transition: transform 0.15s var(--ease-bounce), border-color 0.2s, background 0.2s;
+}
+
+.qm-option:active {
+  transform: scale(0.97);
+}
+
+.qm-option.on {
+  border-color: #a78bfa;
+  background: rgba(167, 139, 250, 0.22);
+}
+
+.qm-option.big {
+  justify-content: center;
+  min-height: 120px;
+  font-family: var(--font-title);
+  font-size: 2rem;
+}
+
+.qm-option.big.yes.on {
+  border-color: #4ade80;
+  background: rgba(74, 222, 128, 0.22);
+  color: #bbf7d0;
+}
+
+.qm-option.big.no.on {
+  border-color: #fb7185;
+  background: rgba(251, 113, 133, 0.22);
+  color: #fecdd3;
+}
+
+.qm-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.qm-text input {
+  height: 60px;
+  padding: 0 18px;
+  border-radius: 18px;
+  border: 1.5px solid var(--border);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 1.15rem;
+  font-weight: 700;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.qm-text input::placeholder {
+  color: #8d82b8;
+  font-weight: 600;
+}
+
+.qm-text input:focus {
+  border-color: #a78bfa;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.qm-hint {
+  font-size: 0.9rem;
+}
+
+.qm-answers {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.qm-answers li {
+  animation: rise 0.45s ease both;
+}
+
+.qm-answer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px 8px 8px;
+  border-radius: 18px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  text-align: left;
+  transition: transform 0.15s var(--ease-bounce), border-color 0.2s, background 0.2s;
+}
+
+button.qm-answer:active {
+  transform: scale(0.98);
+}
+
+.qm-answer.on {
+  border-color: #fb7185;
+  background: rgba(251, 113, 133, 0.18);
+}
+
+.qm-answer-name {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 38%;
+  font-weight: 700;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.qm-answer-value {
+  flex: 1;
+  min-width: 0;
+  text-align: right;
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.qm-radio {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+}
+
+.qm-radio.on {
+  border-color: #fb7185;
+  background: #fb7185;
+  color: #fff;
+}
+
+.qm-vote-q {
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.qm-compare {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: rise 0.5s 0.55s ease both;
+}
+
+.qm-compare-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.qm-compare-item small {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.qm-compare-item p {
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-wrap: balance;
+}
+
+.qm-compare-item.impostor {
+  background: rgba(239, 68, 68, 0.14);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.qm-compare-answer {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.qm-compare-answer b {
+  color: var(--text);
+}
+
+.liar .liar-drop {
+  animation: liar-drop 2.4s ease-in infinite;
+}
+
+@keyframes liar-drop {
+  0%, 40% { transform: translateY(0); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(26px); opacity: 0; }
+}
+
+body.typing .liar .liar-drop {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liar .liar-drop,
+  .qm-answers li {
+    animation: none;
+  }
+}
