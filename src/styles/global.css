@@ -3121,3 +3121,183 @@ button.ed-item:active {
     animation: none;
   }
 }
+
+/* ===================================================================
+   Bomba Secreta
+   =================================================================== */
+
+.bomb-cat-card {
+  --chip: #fb923c;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 18px;
+  border-radius: var(--radius);
+  background: linear-gradient(150deg, rgba(249, 115, 22, 0.2), rgba(185, 28, 28, 0.24));
+  border: 1.5px solid rgba(251, 146, 60, 0.5);
+  text-align: center;
+}
+
+.bomb-cat-card h2 {
+  font-size: clamp(1.6rem, 7.5vw, 2.2rem);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.bomb-cat-card small {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.bomb-turn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px 10px 10px;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+}
+
+.bomb-turn small {
+  display: block;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.bomb-turn strong {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.bomb-left {
+  margin-left: auto;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: right;
+}
+
+.bomb-cat-title {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.bomb-board {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.bomb-opt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 64px;
+  padding: 8px 10px;
+  border-radius: 18px;
+  border: 1.5px solid rgba(251, 146, 60, 0.45);
+  background: linear-gradient(160deg, rgba(251, 146, 60, 0.16), rgba(255, 255, 255, 0.04));
+  font-weight: 800;
+  font-size: 1.02rem;
+  line-height: 1.15;
+  text-align: center;
+  overflow-wrap: anywhere;
+  transition: transform 0.15s var(--ease-bounce), opacity 0.2s, background 0.2s;
+}
+
+.bomb-opt:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.bomb-opt.safe {
+  border-color: rgba(74, 222, 128, 0.5);
+  background: rgba(74, 222, 128, 0.12);
+  color: #bbf7d0;
+  opacity: 0.7;
+}
+
+.bomb-opt.boom {
+  border-color: #fde047;
+  background: radial-gradient(circle, #fde047 0%, #f97316 45%, #b91c1c 100%);
+  color: #1a1033;
+  animation: boom-pop 0.5s var(--ease-bounce) both;
+  z-index: 1;
+}
+
+.bomb-opt:disabled:not(.safe):not(.boom) {
+  opacity: 0.45;
+}
+
+.shake {
+  animation: shake 0.5s linear 2;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-6px, 3px); }
+  40% { transform: translate(6px, -3px); }
+  60% { transform: translate(-4px, -2px); }
+  80% { transform: translate(4px, 2px); }
+}
+
+@keyframes boom-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.35); }
+  100% { transform: scale(1.12); }
+}
+
+.bomb-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(253, 224, 71, 0.9) 0%, rgba(249, 115, 22, 0.6) 35%, rgba(185, 28, 28, 0) 75%);
+  animation: bomb-flash 1.2s ease-out both;
+}
+
+@keyframes bomb-flash {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.bomb-win-tag {
+  color: #fde047;
+  font-size: 0.85rem;
+}
+
+.bomb-out-tag {
+  color: #fda4af;
+  font-size: 0.85rem;
+}
+
+.bomb-out {
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.bomb-mascot .bomb-spark {
+  transform-box: view-box;
+  transform-origin: 126px 20px;
+  animation: spark 0.35s ease-in-out infinite alternate;
+}
+
+@keyframes spark {
+  from { transform: scale(0.8) rotate(0deg); opacity: 0.8; }
+  to { transform: scale(1.15) rotate(20deg); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bomb-mascot .bomb-spark,
+  .shake,
+  .bomb-opt.boom {
+    animation: none;
+  }
+}

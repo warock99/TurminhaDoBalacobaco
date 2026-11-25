@@ -7,8 +7,9 @@ import namosca from './namosca/index.js'
 import quemmentiu from './quemmentiu/index.js'
 import quemsoueu from './quemsoueu/index.js'
 import euduvido from './euduvido/index.js'
+import bomba from './bomba/index.js'
 
-export const GAMES = [impostor, termometro, namosca, quemmentiu, quemsoueu, euduvido]
+export const GAMES = [impostor, termometro, namosca, quemmentiu, quemsoueu, euduvido, bomba]
 
 // Jogos que aparecem como "Em breve" na tela inicial.
 export const COMING_SOON = []

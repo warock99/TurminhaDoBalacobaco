@@ -8,6 +8,7 @@ import { TargetMascot } from '../games/namosca/NaMoscaArt.jsx'
 import { LiarMascot } from '../games/quemmentiu/QuemMentiuArt.jsx'
 import { ForeheadMascot } from '../games/quemsoueu/QuemSouEuArt.jsx'
 import { DoubtMascot } from '../games/euduvido/EuDuvidoArt.jsx'
+import { BombMascot } from '../games/bomba/BombaArt.jsx'
 import { vibrate } from '../lib/feedback.js'
 
 const ART = {
@@ -17,6 +18,7 @@ const ART = {
   quemmentiu: <LiarMascot size={96} />,
   quemsoueu: <ForeheadMascot size={96} />,
   euduvido: <DoubtMascot size={96} />,
+  bomba: <BombMascot size={96} />,
 }
 
 export default function Home({ onPick }) {

@@ -81,9 +81,32 @@ function whoosh({ start = 0, dur = 0.28, vol = 0.18 } = {}) {
   src.start(t)
 }
 
+/** Explosão: ruído grave que vai abafando, com um tom bem baixo por baixo. */
+function boom({ dur = 1.1, vol = 0.5 } = {}) {
+  const ac = audio()
+  if (!ac) return
+  const t = ac.currentTime
+  const buffer = ac.createBuffer(1, Math.floor(ac.sampleRate * dur), ac.sampleRate)
+  const data = buffer.getChannelData(0)
+  for (let i = 0; i < data.length; i++) data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / data.length, 2)
+  const src = ac.createBufferSource()
+  src.buffer = buffer
+  const filter = ac.createBiquadFilter()
+  filter.type = 'lowpass'
+  filter.frequency.setValueAtTime(1800, t)
+  filter.frequency.exponentialRampToValueAtTime(120, t + dur)
+  const gain = ac.createGain()
+  gain.gain.setValueAtTime(vol, t)
+  gain.gain.exponentialRampToValueAtTime(0.0001, t + dur)
+  src.connect(filter).connect(gain).connect(master)
+  src.start(t)
+  tone({ freq: 90, to: 35, dur: 0.8, type: 'sine', vol: 0.5 })
+}
+
 const NOTES = { C5: 523.25, D5: 587.33, E5: 659.25, G5: 783.99, A5: 880, C6: 1046.5, E6: 1318.5, G4: 392, C4: 261.63 }
 
 export const sound = {
+  boom: () => boom(),
   tap: () => tone({ freq: 620, to: 880, dur: 0.07, type: 'triangle', vol: 0.18 }),
   soft: () => tone({ freq: 520, dur: 0.05, type: 'sine', vol: 0.12 }),
   add: () => {

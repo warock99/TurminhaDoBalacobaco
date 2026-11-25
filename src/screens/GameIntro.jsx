@@ -7,6 +7,7 @@ import { TargetMascot } from '../games/namosca/NaMoscaArt.jsx'
 import { LiarMascot } from '../games/quemmentiu/QuemMentiuArt.jsx'
 import { ForeheadMascot } from '../games/quemsoueu/QuemSouEuArt.jsx'
 import { DoubtMascot } from '../games/euduvido/EuDuvidoArt.jsx'
+import { BombMascot } from '../games/bomba/BombaArt.jsx'
 
 const ART = {
   impostor: <ImpostorMascot size={170} />,
@@ -15,6 +16,7 @@ const ART = {
   quemmentiu: <LiarMascot size={170} />,
   quemsoueu: <ForeheadMascot size={170} />,
   euduvido: <DoubtMascot size={170} />,
+  bomba: <BombMascot size={170} />,
 }
 
 export default function GameIntro({ game, onPlay, onBack }) {
