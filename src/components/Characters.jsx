@@ -99,29 +99,28 @@ export const CHARACTERS = [
       return (
         <>
           <Legs pants={skin} shoes="#be185d" top={132} h={22} w={10} />
+          {/* cabelo liso, comprido e bem preto, caindo atrás dos ombros */}
+          <g className="ch-afro">
+            <path d="M28 52c0-30 13-46 32-46s32 16 32 46v48c0 4-3 6-7 6H35c-4 0-7-2-7-6z" fill="#0d0806" />
+            <path d="M36 60v42M84 60v42" stroke="#2a1d17" strokeWidth="1.5" strokeLinecap="round" />
+          </g>
           {/* vestido amarelo */}
           <path d="M42 96h36l12 40H30z" fill="#facc15" />
           <path d="M42 96h36v8H42z" fill="#fde047" />
           <g className="ch-arm-l"><rect x="28" y="98" width="11" height="30" rx="5.5" fill={skin} /></g>
           <g className="ch-arm-r"><rect x="81" y="98" width="11" height="30" rx="5.5" fill={skin} /></g>
           <rect x="54" y="82" width="12" height="16" fill={shade} />
-          {/* black power */}
-          <g className="ch-afro">
-            <circle cx="60" cy="40" r="38" fill="#120a07" />
-            <circle cx="30" cy="22" r="14" fill="#120a07" />
-            <circle cx="90" cy="22" r="14" fill="#120a07" />
-            <circle cx="46" cy="12" r="12" fill="#1d120c" />
-            <circle cx="74" cy="12" r="12" fill="#1d120c" />
-          </g>
           {/* rosto */}
           <ellipse cx="60" cy="56" rx="26" ry="29" fill={skin} />
           <ellipse cx="50" cy="42" rx="9" ry="5" fill={glow} opacity=".7" />
-          <path d="M36 40c6-10 16-14 24-14s18 4 24 14c-8-4-16-6-24-6s-16 2-24 6z" fill="#120a07" />
+          {/* franja reta */}
+          <path d="M32 46c0-20 12-32 28-32s28 12 28 32c-2 0-4-1-5-3c-1 2-3 3-5 3c-1-2-2-3-4-3c-1 2-3 3-5 3c-2-1-3-2-4-3c-1 2-3 3-5 3c-2-1-3-2-4-3c-1 2-3 3-5 3c-2-1-3-2-4-3c-1 2-3 3-5 3c-1-1-2-2-3-3c-1 2-2 3-4 3z" fill="#0d0806" />
+          <path d="M44 22c6-4 14-5 22-3" stroke="#4b3a33" strokeWidth="3" strokeLinecap="round" fill="none" opacity=".8" />
+          <path d="M32 46v14M88 46v14" stroke="#0d0806" strokeWidth="5" strokeLinecap="round" />
           {/* argolas */}
           <circle className="ch-earring" cx="33" cy="66" r="6" fill="none" stroke="#fbbf24" strokeWidth="2.5" />
           <circle className="ch-earring" cx="87" cy="66" r="6" fill="none" stroke="#fbbf24" strokeWidth="2.5" />
           <Eyes y={54} gap={10} r={5} />
-          <path d="M44 47l8-2M76 47l-8-2" stroke="#120a07" strokeWidth="2.5" strokeLinecap="round" />
           <path d="M52 68q8 8 16 0q-8 3-16 0z" fill="#e11d48" />
           <path d="M52 68q8 5 16 0" stroke="#9f1239" strokeWidth="1.5" fill="none" />
           <circle cx="44" cy="64" r="3.5" fill="#e879f9" opacity=".35" />
