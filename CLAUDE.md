@@ -138,7 +138,8 @@ Jogadores são compartilhados entre todos os jogos. Jogo com `noPlayers: true` (
   - **Diva**: menina de pele bem escura (tom rico e bonito), black power, argolas douradas, vestido amarelo.
   - **Sargento**: cabelo raspado militar, muito forte, flexionando o braço, bumbum avantajado que balança.
   - **Quadradão**: baixinho, forte, cabeça bem quadrada que balança.
-  - **Cavanhaque**: pele morena, cavanhaque e bigode, cabelo grande preso em rabo de cavalo que balança.
+  - **Cavanhaque**: pele morena, cavanhaque e bigode, cabelo trançado rente à cabeça e uma trança comprida
+    atrás que balança (pedido do Valdir em 26/11: trança no lugar do cabelo longo).
   - **Zoeiro**: rapaz branco de cabelo curtinho, mãos levantadas com os dedos abertos para a frente (balançando),
     boca aberta e língua de fora (mexendo).
 - Nomes são provisórios.
