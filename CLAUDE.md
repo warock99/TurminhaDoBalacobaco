@@ -135,10 +135,13 @@ Jogadores são compartilhados entre todos os jogos. Jogo com `noPlayers: true` (
 ## Personagens (pronto)
 - 6 personagens animados descritos pelo Valdir (caricaturas carinhosas da turma), em `components/Characters.jsx`:
   - **Testuda**: menina com a testa enorme (com brilho passeando), cabelo puxado para trás.
-  - **Diva**: menina de pele bem escura (tom rico e bonito), black power, argolas douradas, vestido amarelo.
+  - **Diva**: menina de pele bem escura (tom rico e bonito), cabelo preto liso e comprido com franja reta
+    (pedido do Valdir em 26/11, no lugar do black power), argolas douradas, vestido amarelo.
   - **Sargento**: cabelo raspado militar, muito forte, flexionando o braço, bumbum avantajado que balança.
   - **Quadradão**: baixinho, forte, cabeça bem quadrada que balança.
-  - **Cavanhaque**: pele morena, cavanhaque e bigode, cabelo grande preso em rabo de cavalo que balança.
+  - **Cavanhaque**: homem de pele morena, queixo quadrado, ombros largos, barba por fazer, costeletas, bigode grosso
+    e cavanhaque; cabelo trançado rente à cabeça e tranças curtinhas
+    atrás que balançam (pedido do Valdir em 26/11: tranças no lugar do cabelo longo, curtas e bem masculino).
   - **Zoeiro**: rapaz branco de cabelo curtinho, mãos levantadas com os dedos abertos para a frente (balançando),
     boca aberta e língua de fora (mexendo).
 - Nomes são provisórios.

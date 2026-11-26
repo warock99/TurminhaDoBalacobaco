@@ -99,29 +99,28 @@ export const CHARACTERS = [
       return (
         <>
           <Legs pants={skin} shoes="#be185d" top={132} h={22} w={10} />
+          {/* cabelo liso, comprido e bem preto, caindo atrás dos ombros */}
+          <g className="ch-afro">
+            <path d="M28 52c0-30 13-46 32-46s32 16 32 46v48c0 4-3 6-7 6H35c-4 0-7-2-7-6z" fill="#0d0806" />
+            <path d="M36 60v42M84 60v42" stroke="#2a1d17" strokeWidth="1.5" strokeLinecap="round" />
+          </g>
           {/* vestido amarelo */}
           <path d="M42 96h36l12 40H30z" fill="#facc15" />
           <path d="M42 96h36v8H42z" fill="#fde047" />
           <g className="ch-arm-l"><rect x="28" y="98" width="11" height="30" rx="5.5" fill={skin} /></g>
           <g className="ch-arm-r"><rect x="81" y="98" width="11" height="30" rx="5.5" fill={skin} /></g>
           <rect x="54" y="82" width="12" height="16" fill={shade} />
-          {/* black power */}
-          <g className="ch-afro">
-            <circle cx="60" cy="40" r="38" fill="#120a07" />
-            <circle cx="30" cy="22" r="14" fill="#120a07" />
-            <circle cx="90" cy="22" r="14" fill="#120a07" />
-            <circle cx="46" cy="12" r="12" fill="#1d120c" />
-            <circle cx="74" cy="12" r="12" fill="#1d120c" />
-          </g>
           {/* rosto */}
           <ellipse cx="60" cy="56" rx="26" ry="29" fill={skin} />
           <ellipse cx="50" cy="42" rx="9" ry="5" fill={glow} opacity=".7" />
-          <path d="M36 40c6-10 16-14 24-14s18 4 24 14c-8-4-16-6-24-6s-16 2-24 6z" fill="#120a07" />
+          {/* franja reta */}
+          <path d="M32 46c0-20 12-32 28-32s28 12 28 32c-2 0-4-1-5-3c-1 2-3 3-5 3c-1-2-2-3-4-3c-1 2-3 3-5 3c-2-1-3-2-4-3c-1 2-3 3-5 3c-2-1-3-2-4-3c-1 2-3 3-5 3c-2-1-3-2-4-3c-1 2-3 3-5 3c-1-1-2-2-3-3c-1 2-2 3-4 3z" fill="#0d0806" />
+          <path d="M44 22c6-4 14-5 22-3" stroke="#4b3a33" strokeWidth="3" strokeLinecap="round" fill="none" opacity=".8" />
+          <path d="M32 46v14M88 46v14" stroke="#0d0806" strokeWidth="5" strokeLinecap="round" />
           {/* argolas */}
           <circle className="ch-earring" cx="33" cy="66" r="6" fill="none" stroke="#fbbf24" strokeWidth="2.5" />
           <circle className="ch-earring" cx="87" cy="66" r="6" fill="none" stroke="#fbbf24" strokeWidth="2.5" />
           <Eyes y={54} gap={10} r={5} />
-          <path d="M44 47l8-2M76 47l-8-2" stroke="#120a07" strokeWidth="2.5" strokeLinecap="round" />
           <path d="M52 68q8 8 16 0q-8 3-16 0z" fill="#e11d48" />
           <path d="M52 68q8 5 16 0" stroke="#9f1239" strokeWidth="1.5" fill="none" />
           <circle cx="44" cy="64" r="3.5" fill="#e879f9" opacity=".35" />
@@ -239,32 +238,54 @@ export const CHARACTERS = [
       const hair = '#1c120c'
       return (
         <>
-          <Legs pants="#334155" shoes="#0f172a" top={130} h={24} />
-          {/* rabo de cavalo balançando atrás */}
+          <Legs pants="#334155" shoes="#0f172a" top={130} h={24} x1={47} x2={73} w={14} />
+          {/* tranças curtinhas atrás da cabeça, balançando */}
           <g className="ch-ponytail">
-            <path d="M82 28c22 2 30 30 24 62-2 10-10 14-12 6 6-22 2-46-14-58z" fill={hair} />
-            <path d="M92 40c8 10 10 26 6 44" stroke="#3b2a1f" strokeWidth="2" fill="none" strokeLinecap="round" />
-            <rect x="84" y="28" width="10" height="7" rx="2" fill="#f59e0b" transform="rotate(35 89 31)" />
+              <ellipse cx="78.0" cy="34" rx="3.6" ry="3.4" fill={hair} />
+              <ellipse cx="79.2" cy="40" rx="3.6" ry="3.4" fill={hair} />
+              <ellipse cx="80.4" cy="46" rx="3.6" ry="3.4" fill={hair} />
+              <ellipse cx="81.6" cy="52" rx="3.6" ry="3.4" fill={hair} />
+              <ellipse cx="82.8" cy="58" rx="3.6" ry="3.4" fill={hair} />
+              <ellipse cx="84.0" cy="64" rx="3.6" ry="3.4" fill={hair} />
+              <ellipse cx="84.0" cy="32" rx="3.6" ry="3.4" fill={hair} />
+              <ellipse cx="85.6" cy="38" rx="3.6" ry="3.4" fill={hair} />
+              <ellipse cx="87.2" cy="44" rx="3.6" ry="3.4" fill={hair} />
+              <ellipse cx="88.8" cy="50" rx="3.6" ry="3.4" fill={hair} />
+              <ellipse cx="90.4" cy="56" rx="3.6" ry="3.4" fill={hair} />
+              <ellipse cx="92.0" cy="62" rx="3.6" ry="3.4" fill={hair} />
+              <ellipse cx="88.0" cy="38" rx="3.6" ry="3.4" fill={hair} />
+              <ellipse cx="89.4" cy="44" rx="3.6" ry="3.4" fill={hair} />
+              <ellipse cx="90.8" cy="50" rx="3.6" ry="3.4" fill={hair} />
+              <ellipse cx="92.2" cy="56" rx="3.6" ry="3.4" fill={hair} />
+              <ellipse cx="93.6" cy="62" rx="3.6" ry="3.4" fill={hair} />
+            <path d="M84 66h8M88 68h6" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" />
           </g>
-          <path d="M36 98c0-4 8-6 24-6s24 2 24 6l4 36H32z" fill="#0d9488" />
-          <path d="M52 94l8 10 8-10" stroke="#0f766e" strokeWidth="3" fill="none" strokeLinejoin="round" />
-          <g className="ch-arm-l"><rect x="24" y="98" width="12" height="32" rx="6" fill={skin} /></g>
-          <g className="ch-arm-r"><rect x="84" y="98" width="12" height="32" rx="6" fill={skin} /></g>
-          <rect x="53" y="80" width="14" height="14" fill="#74451f" />
-          {/* cabeça */}
-          <ellipse cx="60" cy="52" rx="27" ry="31" fill={skin} />
-          <ellipse cx="50" cy="40" rx="8" ry="4" fill="#a86a3c" opacity=".7" />
-          {/* cabelo grande puxado para trás */}
-          <path d="M32 46c0-24 12-34 28-34s28 10 28 32c-4-10-14-16-28-16s-24 8-28 18z" fill={hair} />
-          <path d="M33 50c-3-6-3-14 1-20" stroke={hair} strokeWidth="5" strokeLinecap="round" fill="none" />
-          <path d="M87 50c3-6 3-14-1-20" stroke={hair} strokeWidth="5" strokeLinecap="round" fill="none" />
-          <path d="M42 41l10-2M78 41l-10-2" stroke={hair} strokeWidth="3.5" strokeLinecap="round" />
-          <Eyes y={50} gap={11} r={5} />
-          {/* bigode e cavanhaque */}
-          <path d="M48 66q12-6 24 0q-12-2-24 0z" fill={hair} />
-          <path d="M50 66c-2-3 8-5 10-3c2-2 12 0 10 3c-4 2-6 1-10 0c-4 1-6 2-10 0z" fill={hair} />
-          <path d="M54 72q6 3 12 0" stroke="#fda4af" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-          <path className="ch-goatee" d="M52 76c2 8 5 12 8 12s6-4 8-12c-4 2-12 2-16 0z" fill={hair} />
+          {/* ombros largos */}
+          <path d="M30 100c0-6 10-9 30-9s30 3 30 9l3 34H27z" fill="#0d9488" />
+          <path d="M50 92l10 11 10-11" stroke="#0f766e" strokeWidth="3" fill="none" strokeLinejoin="round" />
+          <g className="ch-arm-l"><rect x="17" y="98" width="15" height="33" rx="7.5" fill={skin} /></g>
+          <g className="ch-arm-r"><rect x="88" y="98" width="15" height="33" rx="7.5" fill={skin} /></g>
+          {/* pescoço grosso */}
+          <rect x="50" y="76" width="20" height="18" rx="3" fill="#74451f" />
+          {/* cabeça com queixo quadrado */}
+          <path d="M33 42c0-18 12-29 27-29s27 11 27 29v16c0 15-11 26-27 26s-27-11-27-26z" fill={skin} />
+          <ellipse cx="33" cy="52" rx="4" ry="7" fill={skin} />
+          <ellipse cx="87" cy="52" rx="4" ry="7" fill={skin} />
+          {/* barba por fazer no rosto */}
+          <path d="M34 54c2 16 12 28 26 28s24-12 26-28c-3 8-8 12-12 12-4-4-9-5-14-5s-10 1-14 5c-4 0-9-4-12-12z" fill={hair} opacity=".28" />
+          {/* costeletas */}
+          <path d="M34 42v14M86 42v14" stroke={hair} strokeWidth="5" strokeLinecap="round" />
+          {/* cabelo trançado rente à cabeça (tranças nagô) */}
+          <path d="M33 45c0-24 12-33 27-33s27 9 27 31c-4-9-14-13-27-13s-23 5-27 15z" fill={hair} />
+          <path d="M40 37c4-11 10-19 18-22M48 32c3-9 8-14 14-17M58 29c2-7 5-11 10-14M68 29c1-6 3-10 7-12M77 32c0-5 1-8 4-10" stroke="#4a3426" strokeWidth="2.2" strokeLinecap="round" fill="none" strokeDasharray="3 2.5" />
+          {/* sobrancelhas grossas */}
+          <path d="M41 41l12-1M79 41l-12-1" stroke={hair} strokeWidth="5" strokeLinecap="round" />
+          <Eyes y={50} gap={11} r={4.6} />
+          <path d="M58 54q2 6 0 8h4" stroke="#6b3f1d" strokeWidth="2.2" fill="none" strokeLinecap="round" />
+          {/* bigode grosso e cavanhaque */}
+          <path d="M46 68c3-5 9-6 14-4c5-2 11-1 14 4c-5-1-9 0-14 1c-5-1-9-2-14-1z" fill={hair} />
+          <path d="M53 72q7 2 14 0" stroke="#4a2810" strokeWidth="2.6" strokeLinecap="round" fill="none" />
+          <path className="ch-goatee" d="M50 74c1 10 5 15 10 15s9-5 10-15c-4 3-16 3-20 0z" fill={hair} />
         </>
       )
     },
